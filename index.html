@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seasons Schoolhouse</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <!-- Open Graph (shows logo when shared on social / mobile) -->
+  <meta property="og:title" content="Seasons Schoolhouse" />
+  <meta property="og:description" content="A K–8 homeschool enrichment co-op rooted in community, nature, life skills, and hands-on learning." />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="logo.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="showSection('home')">
+    <img src="logo.png" alt="Seasons Schoolhouse Logo" />
+    <div class="nav-logo-text">
+      Seasons Schoolhouse
+      <span>Learning Through Every Season</span>
+    </div>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a onclick="showSection('home'); closeMenu()">Home</a></li>
+    <li class="dropdown">
+      <button onclick="toggleDropdown(event)">Pages ▾</button>
+      <ul class="dropdown-menu" id="pages-dropdown">
+        <li><a onclick="showSection('about-me'); closeAll()">About Me</a></li>
+        <li><a onclick="showSection('about-coop'); closeAll()">About the Co-op</a></li>
+        <li><a onclick="showSection('contact'); closeAll()">Contact</a></li>
+      </ul>
+    </li>
+    <li><a onclick="showSection('contact'); closeMenu()">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════ HOME ══════════════════════════════ -->
+<section id="home" class="active">
+
+  <div class="hero">
+    <img class="hero-logo" src="logo.png" alt="Seasons Schoolhouse" />
+    <p class="hero-eyebrow">K–8 Homeschool Enrichment · Est. 2024</p>
+    <h1 class="hero-title">Seasons<br><em>Schoolhouse</em></h1>
+    <p class="hero-subtitle">Rooted in community. Grown through experience.</p>
+    <p class="hero-tagline">A warm, hands-on co-op where homeschool families gather each season to explore life skills, nature, history, and creativity — together.</p>
+    <div class="hero-btns">
+      <button class="btn btn-solid" onclick="showSection('about-coop')">Explore the Co-op</button>
+      <button class="btn" onclick="showSection('contact')">Join Our Community</button>
+    </div>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar"><span class="pillar-icon">🌿</span><h3>Nature Study</h3><p>Learning that begins outdoors and roots itself in the living world around us.</p></div>
+    <div class="pillar"><span class="pillar-icon">🧵</span><h3>Life Skills</h3><p>Cooking, sewing, gardening — practical wisdom passed down with intention.</p></div>
+    <div class="pillar"><span class="pillar-icon">📜</span><h3>History & Humanities</h3><p>Stories that connect children to the world they've inherited and the one they'll shape.</p></div>
+    <div class="pillar"><span class="pillar-icon">🎨</span><h3>Art & Creativity</h3><p>Making things by hand, expressing ideas, and discovering what imagination can build.</p></div>
+    <div class="pillar"><span class="pillar-icon">🚌</span><h3>Field Trips</h3><p>Learning beyond four walls — local adventures that bring lessons to life.</p></div>
+    <div class="pillar"><span class="pillar-icon">🤝</span><h3>Community</h3><p>A circle of families walking the homeschool path together, season by season.</p></div>
+  </div>
+
+  <div class="quote-band">
+    <blockquote>"Tell me and I forget. Teach me and I remember. Involve me and I learn."</blockquote>
+    <cite>— Benjamin Franklin</cite>
+  </div>
+
+  <footer>
+    <div class="footer-logo-wrap">
+      <img src="logo.png" alt="Logo" />
+      <div class="footer-logo">Seasons Schoolhouse</div>
+    </div>
+    <p>© 2025 · Danyelle Holt · seasonsschoolhouse@gmail.com</p>
+  </footer>
+</section>
+
+<!-- ══════════════════════════════ ABOUT ME ══════════════════════════════ -->
+<section id="about-me">
+
+  <div class="page-hero">
+    <p class="page-label">The Woman Behind the Co-op</p>
+    <h2 class="page-title">Hello, I'm <em>Danyelle</em></h2>
+  </div>
+
+  <div class="about-me-body">
+    <div class="about-me-sidebar">
+      <div class="founder-initial">D</div>
+      <div class="founder-name">Danyelle Holt</div>
+      <div class="founder-role">Founder & Organizer</div>
+      <div class="divider"></div>
+      <p class="sidebar-bio">Wife · Mom · Homeschooler<br>Lover of nature, hands-on learning,<br>and building community.</p>
+    </div>
+    <div class="about-me-text">
+      <p>I'm a wife and mom who began our homeschool journey two years ago — and it changed everything. Stepping away from the conventional path was both freeing and humbling, and it opened my eyes to just how many other families were walking the same road, often quietly, and often alone.</p>
+      <p>That's where Seasons Schoolhouse was born. I saw a genuine need for a gathering place — a community where moms could exhale, where kids could connect, and where learning could happen the way I've always believed it should: with dirt on your hands, curiosity in your heart, and people alongside you.</p>
+      <p>I've carried a deep passion for childhood education for as long as I can remember. Providing hands-on, practical experiences for children isn't just something I believe in — it's a calling. Watching a child understand something not because they read it in a textbook, but because they lived it, is one of the most beautiful things I know.</p>
+      <p>Seasons Schoolhouse is my small offering to this community. I'm so glad you found your way here.</p>
+    </div>
+  </div>
+
+  <div class="values-strip">
+    <span class="value-tag">Hands-On Learning</span>
+    <span class="value-tag">Community-Centered</span>
+    <span class="value-tag">Nature-Inspired</span>
+    <span class="value-tag">Intentional Education</span>
+    <span class="value-tag">Practical Wisdom</span>
+    <span class="value-tag">Faith & Family</span>
+  </div>
+
+  <footer>
+    <div class="footer-logo-wrap">
+      <img src="logo.png" alt="Logo" />
+      <div class="footer-logo">Seasons Schoolhouse</div>
+    </div>
+    <p>© 2025 · Danyelle Holt · seasonsschoolhouse@gmail.com</p>
+  </footer>
+</section>
+
+<!-- ══════════════════════════════ ABOUT CO-OP ══════════════════════════════ -->
+<section id="about-coop">
+
+  <div class="page-hero">
+    <p class="page-label">What We Do & Who We Are</p>
+    <h2 class="page-title">About the <em>Co-op</em></h2>
+  </div>
+
+  <div class="coop-intro">
+    <p>Seasons Schoolhouse is a K–8 homeschool enrichment co-op that gathers bi-weekly during the school year (September through May). We meet as a community to learn, create, explore, and grow — guided by the rhythms of each season and the curiosity of every child.</p>
+  </div>
+
+  <div class="info-cards">
+    <div class="info-card"><span class="info-card-icon">📅</span><h3>When We Meet</h3><p>Bi-weekly during the school year, September through May. Each gathering is a full, intentional day of learning.</p></div>
+    <div class="info-card"><span class="info-card-icon">🌱</span><h3>Who We Welcome</h3><p>Homeschool families with children in kindergarten through 8th grade. All learning styles and backgrounds are welcome here.</p></div>
+    <div class="info-card"><span class="info-card-icon">🏡</span><h3>Our Approach</h3><p>Experiential, community-led, and rooted in real-world skills. We learn by doing — not just listening.</p></div>
+    <div class="info-card"><span class="info-card-icon">🍂</span><h3>Our Rhythm</h3><p>Each season brings a new focus and fresh activities. We follow nature's lead and let the calendar shape our curriculum.</p></div>
+  </div>
+
+  <div class="activities-section">
+    <h2 class="section-heading">What We <em>Explore</em></h2>
+    <p class="section-sub">Learning Areas & Activities</p>
+    <div class="activity-grid">
+      <div class="activity-item"><span class="icon">🌿</span><div><h4>Nature Study</h4><p>Seasonal observation, plant identification, wildlife exploration, and outdoor stewardship.</p></div></div>
+      <div class="activity-item"><span class="icon">🧵</span><div><h4>Life Skills</h4><p>Cooking from scratch, basic sewing, gardening, and the practical arts of everyday living.</p></div></div>
+      <div class="activity-item"><span class="icon">📜</span><div><h4>History & Humanities</h4><p>Living history lessons, storytelling, cultural studies, and connection to the past.</p></div></div>
+      <div class="activity-item"><span class="icon">🎨</span><div><h4>Art & Creative Projects</h4><p>Watercolor, nature journaling, crafts, and seasonal projects made with care by hand.</p></div></div>
+      <div class="activity-item"><span class="icon">🚌</span><div><h4>Field Trips</h4><p>Local adventures to farms, museums, nature preserves, historical sites, and beyond.</p></div></div>
+      <div class="activity-item"><span class="icon">🤝</span><div><h4>Community Service</h4><p>Teaching children to look outward — giving back and serving those around us with purpose.</p></div></div>
+    </div>
+  </div>
+
+  <div class="past-section">
+    <h2 class="section-heading">Past <em>Seasons</em></h2>
+    <p class="section-sub" style="text-align:left; margin-top:0.5rem; margin-bottom:0;">A look at what we've done together</p>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-season">Fall 2024</div><h4>Harvest & Heritage</h4><p>We explored the history of the harvest season, learned to can and preserve food, made apple butter from scratch, and took a field trip to a local farm to connect our learning to the land.</p></div>
+      <div class="timeline-item"><div class="timeline-season">Winter 2025</div><h4>Warmth & Craft</h4><p>We dove into textile arts — basic hand sewing, weaving, and warm-weather crafts — alongside winter nature journaling and a study of how communities around the world celebrate the cold months.</p></div>
+      <div class="timeline-item"><div class="timeline-season">Spring 2025</div><h4>Seeds & Stories</h4><p>Children planted their own seedlings, studied plant life cycles, explored local native plants on a guided nature walk, and worked on a community garden contribution project together.</p></div>
+      <div class="timeline-item"><div class="timeline-season">Fall 2025</div><h4>Maps, Makers & Milestones</h4><p>A history-rich season exploring early American life, cartography, pioneer skills, and a field trip to a local historical site. Kids made their own hand-drawn maps and learned butter churning along the way.</p></div>
+    </div>
+    <div style="margin-top:3rem; text-align:center;">
+      <p style="font-size:0.86rem; color:var(--brown); margin-bottom:1.5rem;">Curious about what's coming up this season?</p>
+      <button class="btn btn-solid" onclick="showSection('contact')">Get in Touch</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo-wrap">
+      <img src="logo.png" alt="Logo" />
+      <div class="footer-logo">Seasons Schoolhouse</div>
+    </div>
+    <p>© 2025 · Danyelle Holt · seasonsschoolhouse@gmail.com</p>
+  </footer>
+</section>
+
+<!-- ══════════════════════════════ CONTACT ══════════════════════════════ -->
+<section id="contact">
+
+  <div class="page-hero">
+    <p class="page-label">We'd Love to Hear From You</p>
+    <h2 class="page-title">Come <em>Connect</em></h2>
+  </div>
+
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <h3>Let's find a place for your family.</h3>
+      <p>Whether you're just curious, ready to join, or simply looking to learn more — reach out. We welcome new families warmly and genuinely love connecting with the homeschool community.</p>
+      <div class="contact-detail"><span class="contact-icon">✉️</span><a href="mailto:seasonsschoolhouse@gmail.com">seasonsschoolhouse@gmail.com</a></div>
+      <div class="contact-detail"><span class="contact-icon">📸</span><span>Instagram — coming soon</span></div>
+      <div class="contact-detail"><span class="contact-icon">👥</span><span>Band — coming soon</span></div>
+      <div class="divider"></div>
+      <p class="enroll-note">We are currently enrolling for the <strong>2026–2027 school year</strong>. Spaces are limited and filled on a first-come, community-fit basis. We can't wait to meet you.</p>
+    </div>
+
+    <div>
+      <div class="contact-form" id="contact-form">
+        <div class="form-row">
+          <div class="field"><label>Your Name</label><input type="text" placeholder="First & last name" id="f-name" /></div>
+          <div class="field"><label>Email Address</label><input type="email" placeholder="your@email.com" id="f-email" /></div>
+        </div>
+        <div class="field"><label>Number & Ages of Children</label><input type="text" placeholder="e.g. 3 children — ages 5, 8, 11" /></div>
+        <div class="field">
+          <label>How Can We Help?</label>
+          <select>
+            <option value="">Select one…</option>
+            <option>I'm interested in joining the co-op</option>
+            <option>I'd like to be added to the waitlist</option>
+            <option>I just have a question</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field"><label>Your Message</label><textarea placeholder="Tell us a little about your family and what brought you here…"></textarea></div>
+        <p class="form-note">This form goes directly to Danyelle's inbox. We aim to respond within a few days.</p>
+        <button class="btn btn-solid" onclick="submitForm()">Send a Message</button>
+      </div>
+      <div class="form-success" id="form-success">🌿 Thank you! Your message has been received. Danyelle will be in touch soon — we're so glad you reached out.</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo-wrap">
+      <img src="logo.png" alt="Logo" />
+      <div class="footer-logo">Seasons Schoolhouse</div>
+    </div>
+    <p>© 2025 · Danyelle Holt · seasonsschoolhouse@gmail.com</p>
+  </footer>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
