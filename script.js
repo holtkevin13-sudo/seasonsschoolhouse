@@ -4,7 +4,9 @@ function showSection(id) {
   const el = document.getElementById(id);
   if (el) {
     el.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    // Force scroll to very top of page
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }
   closeAll();
 }
