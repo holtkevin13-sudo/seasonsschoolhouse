@@ -107,7 +107,7 @@ nav {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 12px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: var(--white);
@@ -115,9 +115,21 @@ nav {
   border-radius: 4px;
   min-width: 190px;
   box-shadow: 0 8px 28px rgba(62,46,34,0.15);
-  padding: 0.5rem 0;
+  padding: 0.8rem 0 0.5rem;
   list-style: none;
   z-index: 200;
+  /* Bridge the gap so mouse movement doesn't close the menu */
+  margin-top: 0;
+}
+
+/* Invisible bridge between button and dropdown */
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
 }
 
 .dropdown-menu.open { display: block; }
