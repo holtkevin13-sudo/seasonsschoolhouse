@@ -51,7 +51,9 @@ nav {
   height: 52px;
   width: 52px;
   object-fit: contain;
-  border-radius: 0;
+  border-radius: 50%;
+  background: var(--cream);
+  padding: 3px;
 }
 
 .nav-logo-text {
