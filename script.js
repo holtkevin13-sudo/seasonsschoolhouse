@@ -27,40 +27,56 @@ function toggleAboutDropdown(e) {
 }
 
 // ─── GALLERY ───
-const galleryPhotos = [
-  'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1400&auto=format&q=80',
-  'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1400&auto=format&q=80',
-  'https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=1400&auto=format&q=80',
-  'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1400&auto=format&q=80',
-  'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1400&auto=format&q=80',
-];
-
 let galleryIndex = 0;
+let homeGalleryIndex = 0;
 
 function initGallery() {
-  const slides = document.querySelectorAll('.gallery-img');
-  if (!slides.length) return;
-  slides[0].classList.add('active');
+  // Full gallery page
+  const slides = document.querySelectorAll('#gallery .gallery-img');
+  if (slides.length) {
+    slides[0].classList.add('active');
+    setInterval(() => {
+      slides[galleryIndex].classList.remove('active');
+      galleryIndex = (galleryIndex + 1) % slides.length;
+      slides[galleryIndex].classList.add('active');
+      document.querySelectorAll('#gallery .gallery-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === galleryIndex);
+      });
+    }, 5000);
+  }
 
-  setInterval(() => {
-    slides[galleryIndex].classList.remove('active');
-    galleryIndex = (galleryIndex + 1) % slides.length;
-    slides[galleryIndex].classList.add('active');
-
-    // Update dots
-    document.querySelectorAll('.gallery-dot').forEach((dot, i) => {
-      dot.classList.toggle('active', i === galleryIndex);
-    });
-  }, 5000);
+  // Home page gallery
+  const homeSlides = document.querySelectorAll('.home-gallery .gallery-img');
+  if (homeSlides.length) {
+    homeSlides[0].classList.add('active');
+    setInterval(() => {
+      homeSlides[homeGalleryIndex].classList.remove('active');
+      homeGalleryIndex = (homeGalleryIndex + 1) % homeSlides.length;
+      homeSlides[homeGalleryIndex].classList.add('active');
+      document.querySelectorAll('.home-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === homeGalleryIndex);
+      });
+    }, 5000);
+  }
 }
 
 function goToSlide(i) {
-  const slides = document.querySelectorAll('.gallery-img');
+  const slides = document.querySelectorAll('#gallery .gallery-img');
   slides[galleryIndex].classList.remove('active');
   galleryIndex = i;
   slides[galleryIndex].classList.add('active');
-  document.querySelectorAll('.gallery-dot').forEach((dot, idx) => {
+  document.querySelectorAll('#gallery .gallery-dot').forEach((dot, idx) => {
     dot.classList.toggle('active', idx === galleryIndex);
+  });
+}
+
+function goToHomeSlide(i) {
+  const slides = document.querySelectorAll('.home-gallery .gallery-img');
+  slides[homeGalleryIndex].classList.remove('active');
+  homeGalleryIndex = i;
+  slides[homeGalleryIndex].classList.add('active');
+  document.querySelectorAll('.home-dot').forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === homeGalleryIndex);
   });
 }
 
