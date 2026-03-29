@@ -556,6 +556,10 @@ section.active { display: block; }
   background: var(--bark);
 }
 
+.home-gallery {
+  height: 480px;
+}
+
 .gallery-img {
   position: absolute;
   inset: 0;
