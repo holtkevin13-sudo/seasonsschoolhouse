@@ -7,10 +7,12 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <meta property="og:title" content="Current Families — Seasons Schoolhouse" />
+  <meta property="og:description" content="A homeschool enrichment community rooted in experience, nature, and meaningful connection." />
   <meta property="og:image" content="logo.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-/* ─── RESET & VARIABLES ─── */
+  <style>/* ─── RESET & VARIABLES ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -1215,13 +1217,315 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   .container { padding: 2.5rem 1.2rem; }
 }
 
-  </style>
+/* ─── NAV — green bottom border ─── */
+nav { border-bottom: 2px solid var(--sage) !important; }
+
+/* ─── NAV — active item underline ─── */
+.nav-links > li > a.active {
+  color: var(--moss);
+  font-weight: 500;
+  position: relative;
+}
+.nav-links > li > a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 2px;
+  background: var(--sage);
+  border-radius: 2px;
+}
+
+/* ─── PILLAR HOVER ─── */
+.pillar {
+  padding: 1.2rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.pillar:hover {
+  border-top: 3px solid var(--sage);
+  box-shadow: 0 4px 18px rgba(62,46,34,0.08);
+  background: var(--white);
+}
+
+/* ─── PAGE HERO GRADIENT ─── */
+.page-hero {
+  background: linear-gradient(160deg, #eef4ec 0%, var(--cream) 60%) !important;
+}
+
+/* ─── HEADING ACCENT LINE ─── */
+.section-heading::after,
+.page-title::after {
+  content: '';
+  display: block;
+  width: 36px; height: 2px;
+  background: var(--tan);
+  margin: 0.7rem auto 0;
+  border-radius: 2px;
+}
+
+/* ─── BUTTONS — slightly thicker border ─── */
+.btn { border-width: 1.5px !important; }
+
+/* ─── FOOTER LINK HOVER UNDERLINE ─── */
+.footer-links a { position: relative; padding-bottom: 2px; }
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--sage-lt);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+.footer-links a:hover::after { transform: scaleX(1); }
+
+/* ─── STORY & VALUE CARD HOVER ─── */
+.story-link-card {
+  border-top: 3px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.story-link-card:hover { border-top-color: var(--sage); }
+
+.value-card {
+  border-top: 3px solid transparent;
+  transition: border-top-color 0.25s, box-shadow 0.25s;
+}
+.value-card:hover {
+  border-top-color: var(--sage);
+  box-shadow: 0 4px 18px rgba(62,46,34,0.08);
+}
+
+/* ─── FOUNDER PHOTO ─── */
+.founder-photo {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--sage-lt);
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+/* ─── DROPDOWN HOVER (desktop) ─── */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu { display: block; }
+}
+
+/* ─── HERO circles off ─── */
+.hero::before, .hero::after { display: none; }
+
+/* ─── DROPDOWN HOVER (desktop) ─── */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu { display: block; }
+}
+
+/* ─── HERO — remove decorative circles ─── */
+.hero::before, .hero::after { display: none; }
+
+/* ─── NAV — sage green bottom border ─── */
+nav { border-bottom: 2px solid var(--sage) !important; }
+
+/* ─── NAV — active page underline ─── */
+.nav-links > li > a.active {
+  color: var(--moss); font-weight: 500; position: relative;
+}
+.nav-links > li > a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 2px; background: var(--sage); border-radius: 2px;
+}
+
+/* ─── PILLAR SECTION — subtle top border to ease transition ─── */
+.pillars {
+  border-top: 3px solid var(--linen);
+}
+.pillar {
+  padding: 1.2rem; border-radius: 4px;
+  border: 1px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+}
+.pillar:hover {
+  border-top: 3px solid var(--sage);
+  box-shadow: 0 4px 18px rgba(62,46,34,0.08);
+  background: var(--white);
+}
+
+/* ─── PAGE HERO — sage-to-cream gradient ─── */
+.page-hero {
+  background: linear-gradient(160deg, #eef4ec 0%, var(--cream) 60%) !important;
+}
+
+/* ─── HEADING ACCENT LINE — shorter, lighter ─── */
+.section-heading::after,
+.page-title::after {
+  content: '';
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--tan);
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+/* ─── BUTTONS — slightly thicker border ─── */
+.btn { border-width: 1.5px !important; }
+
+/* ─── FOOTER LINK HOVER ─── */
+.footer-links a { position: relative; padding-bottom: 2px; }
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px; background: var(--sage-lt);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+.footer-links a:hover::after { transform: scaleX(1); }
+
+/* ─── STORY & VALUE & AREA CARD HOVER ─── */
+.story-link-card {
+  border-top: 3px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.story-link-card:hover { border-top-color: var(--sage); }
+
+.value-card {
+  border-top: 3px solid transparent;
+  transition: border-top-color 0.25s, box-shadow 0.25s;
+}
+.value-card:hover {
+  border-top-color: var(--sage);
+  box-shadow: 0 4px 18px rgba(62,46,34,0.08);
+}
+
+/* ─── VALUES SECTION — linen background wrap ─── */
+.values-section-wrap {
+  background: var(--linen);
+  padding: 1rem 0 3rem;
+}
+
+/* ─── FOUNDER PHOTO ─── */
+.founder-photo {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--sage-lt);
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+/* ─── GALLERY — botanical placeholder pattern ─── */
+.gallery-placeholder {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--linen),
+    var(--linen) 4px,
+    var(--cream) 4px,
+    var(--cream) 20px
+  );
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.6rem; color: var(--tan);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem; letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.gallery-placeholder span { font-size: 1.8rem; opacity: 0.6; }
+
+/* ─── HANDBOOK — sticky TOC sidebar (desktop) ─── */
+.handbook-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 3rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+  align-items: start;
+}
+.handbook-toc-sticky {
+  position: sticky;
+  top: 90px;
+  background: var(--linen);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+.handbook-toc-sticky h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem; font-weight: 500;
+  color: var(--moss); margin-bottom: 1rem;
+}
+.handbook-toc-sticky ol {
+  padding-left: 1.2rem;
+  counter-reset: toc-counter;
+  list-style: none;
+  padding-left: 0;
+}
+.handbook-toc-sticky ol li {
+  font-size: 0.78rem; color: var(--brown);
+  line-height: 1.5; padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(196,168,130,0.2);
+}
+.handbook-toc-sticky ol li:last-child { border-bottom: none; }
+.handbook-toc-sticky ol li a {
+  color: var(--brown); text-decoration: none;
+  transition: color 0.2s;
+}
+.handbook-toc-sticky ol li a:hover { color: var(--sage); }
+
+/* ─── QUOTE ROTATOR ─── */
+.quote-band {
+  position: relative; background: var(--moss);
+  overflow: hidden; padding: 0;
+}
+.quote-slides-wrap { position: relative; }
+.quote-slide {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 4.5rem 2rem 3rem;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  opacity: 0; transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+.quote-slide.active { opacity: 1; pointer-events: auto; position: relative; }
+.quote-slide blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 3vw, 1.85rem);
+  font-weight: 300; font-style: italic;
+  color: var(--cream); max-width: 720px;
+  line-height: 1.65; margin: 0 auto 1.2rem;
+}
+.quote-slide cite {
+  font-family: 'Jost', sans-serif; font-style: normal;
+  font-size: 0.7rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--sage-lt);
+}
+.quote-dots {
+  display: flex; justify-content: center;
+  gap: 0.55rem; padding: 0 0 1.8rem;
+  background: var(--moss);
+}
+.quote-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--sage-lt); opacity: 0.35;
+  transition: opacity 0.4s; cursor: pointer;
+  border: none; padding: 0; display: block;
+}
+.quote-dot.active { opacity: 1; background: var(--cream); }
+
+@media (max-width: 768px) {
+  .handbook-layout { grid-template-columns: 1fr; }
+  .handbook-toc-sticky { position: static; }
+}
+</style>
 </head>
 <body>
-
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="logo.png" alt="Seasons Schoolhouse Logo" />
+    <img src="logo.png" alt="Seasons Schoolhouse" />
     <div class="nav-logo-text">Seasons Schoolhouse<span>Learning Through Every Season</span></div>
   </a>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -1230,15 +1534,18 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li class="dropdown">
-      <button onclick="toggleDropdown('about-dd', event)">About ▾</button>
+      <button onclick="toggleDropdown('about-dd',event)">About &#9662;</button>
       <ul class="dropdown-menu" id="about-dd">
         <li><a href="about.html">Our Story</a></li>
         <li><a href="values.html">Our Values</a></li>
         <li><a href="program.html">Our Program</a></li>
+        <li><a href="expect.html">What to Expect</a></li>
+        <li><a href="expect.html">What to Expect</a>
+      <a href="gallery.html">Gallery</a></li>
       </ul>
     </li>
     <li class="dropdown">
-      <button onclick="toggleDropdown('resources-dd', event)">Resources ▾</button>
+      <button onclick="toggleDropdown('resources-dd',event)">Resources &#9662;</button>
       <ul class="dropdown-menu" id="resources-dd">
         <li><a href="apply.html">Apply</a></li>
         <li><a href="handbook.html">Parent Handbook</a></li>
@@ -1249,91 +1556,60 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
-
 <div class="page-wrapper">
-
   <div class="page-hero">
     <p class="page-label">For Enrolled Families</p>
     <h1 class="page-title">Current <em>Families</em></h1>
-    <p class="page-subtitle">This page is for our enrolled Seasons Schoolhouse families. Your community hub lives on Band — everything you need to stay connected is there.</p>
+    <p class="page-subtitle">This page is for our enrolled Seasons Schoolhouse families. Your community hub lives on Band &mdash; everything you need to stay connected is there.</p>
   </div>
 
   <div class="families-intro">
-    <p>Once you're part of the Seasons Schoolhouse family, your primary home base is our private Band community. Band is the app we use for all internal communication — it's where announcements live, conversations happen, memories are shared, and the calendar stays up to date. If you're enrolled and not yet connected, follow the steps below to get set up.</p>
+    <p>Once you&rsquo;re part of the Seasons Schoolhouse family, your primary home base is our private Band community. Band is the app we use for all internal communication &mdash; it&rsquo;s where announcements live, conversations happen, memories are shared, and the calendar stays up to date. If you&rsquo;re enrolled and not yet connected, follow the steps below to get set up.</p>
   </div>
 
   <div style="padding:1rem 2rem 0;">
-    <h2 class="section-heading">What's Inside <em>Band</em></h2>
+    <h2 class="section-heading">What&rsquo;s Inside <em>Band</em></h2>
     <p class="section-label">Your private parent community</p>
   </div>
 
   <div class="band-features">
-    <div class="band-feature">
-      <span class="icon">📣</span>
-      <h4>Announcements</h4>
-      <p>All co-op updates, gathering details, and important reminders posted directly by Danyelle.</p>
-    </div>
-    <div class="band-feature">
-      <span class="icon">💬</span>
-      <h4>Group Chat</h4>
-      <p>Connect with other Seasons Schoolhouse families, ask questions, and support one another.</p>
-    </div>
-    <div class="band-feature">
-      <span class="icon">📸</span>
-      <h4>Photos & Memories</h4>
-      <p>A private album of gathering photos — celebrating what your children create and experience together.</p>
-    </div>
-    <div class="band-feature">
-      <span class="icon">📅</span>
-      <h4>Live Calendar</h4>
-      <p>The most up-to-date version of our meeting calendar, including any changes or additions throughout the year.</p>
-    </div>
-    <div class="band-feature">
-      <span class="icon">📂</span>
-      <h4>Shared Resources</h4>
-      <p>Supply lists, reference materials, and shared documents for enrolled families.</p>
-    </div>
-    <div class="band-feature">
-      <span class="icon">🔒</span>
-      <h4>Private & Secure</h4>
-      <p>Our Band group is invite-only. Only enrolled Seasons Schoolhouse families have access.</p>
-    </div>
+    <div class="band-feature"><span class="icon">&#128227;</span><h4>Announcements</h4><p>All gathering updates, reminders, and important notices posted directly by Danyelle.</p></div>
+    <div class="band-feature"><span class="icon">&#128172;</span><h4>Group Chat</h4><p>Connect with other Seasons Schoolhouse families, ask questions, and support one another.</p></div>
+    <div class="band-feature"><span class="icon">&#128248;</span><h4>Photos &amp; Memories</h4><p>A private space for gathering photos &mdash; celebrating what your children create and experience together.</p></div>
+    <div class="band-feature"><span class="icon">&#128197;</span><h4>Live Calendar</h4><p>The most up-to-date version of our meeting calendar, including any changes throughout the year.</p></div>
+    <div class="band-feature"><span class="icon">&#128194;</span><h4>Shared Resources</h4><p>Supply lists, reference materials, and shared documents for enrolled families.</p></div>
+    <div class="band-feature"><span class="icon">&#128274;</span><h4>Private Community</h4><p>Our Band group is for enrolled Seasons Schoolhouse families only. Access is granted upon enrollment.</p></div>
   </div>
 
   <div class="band-steps">
     <h3>How to Join Our Band Community</h3>
-
     <div class="band-step">
       <div class="band-step-num">1</div>
-      <p>Download the <strong>Band app</strong> on your phone — available on the <a href="https://apps.apple.com/app/band/id459869041" target="_blank">App Store</a> and <a href="https://play.google.com/store/apps/details?id=com.naver.band" target="_blank">Google Play</a>. It's free.</p>
+      <p>Download the <strong>Band app</strong> on your phone &mdash; available on the <a href="https://apps.apple.com/app/band/id459869041" target="_blank">App Store</a> and <a href="https://play.google.com/store/apps/details?id=com.naver.band" target="_blank">Google Play</a>. It&rsquo;s free.</p>
     </div>
-
     <div class="band-step">
       <div class="band-step-num">2</div>
-      <p>Create a free Band account using your email address. We recommend using the same email you registered with for Seasons Schoolhouse.</p>
+      <p>Create a free Band account using your email address.</p>
     </div>
-
     <div class="band-step">
       <div class="band-step-num">3</div>
-      <p>Use the private join link below to request access to our group. Access is granted to enrolled families only — Danyelle will approve your request.</p>
+      <p>Use the private join link below to request access to our group. Danyelle will approve your request once enrollment is confirmed.</p>
     </div>
-
     <div class="band-step">
       <div class="band-step-num">4</div>
-      <p>Once approved, explore the group — introduce your family, check the calendar, and say hello to the community. We're glad you're here.</p>
+      <p>Once approved, introduce your family, check the calendar, and say hello to the community. We&rsquo;re glad you&rsquo;re here.</p>
     </div>
-
-    <div style="text-align:center; margin-top:2.5rem; padding:2rem; background:var(--linen); border-radius:4px;">
-      <p style="font-size:0.82rem; color:var(--brown); margin-bottom:0.5rem; letter-spacing:0.08em; text-transform:uppercase;">Enrolled Families Only</p>
-      <p style="font-size:0.9rem; color:var(--bark); margin-bottom:1.5rem; line-height:1.9;">Access to our Band community is extended upon enrollment. If you have not yet enrolled and are interested in joining Seasons Schoolhouse, please visit our <a href="apply.html" style="color:var(--sage);">Apply</a> page.</p>
+    <div style="text-align:center;margin-top:2.5rem;padding:2rem;background:var(--linen);border-radius:4px;">
+      <p style="font-size:0.82rem;color:var(--brown);margin-bottom:0.5rem;letter-spacing:0.08em;text-transform:uppercase;">Enrolled Families Only</p>
+      <p style="font-size:0.9rem;color:var(--bark);margin-bottom:1.5rem;line-height:1.9;">Access to our Band community is extended upon enrollment. Not yet enrolled? Visit our <a href="apply.html" style="color:var(--sage);">Apply</a> page to get started.</p>
       <a class="btn btn-solid" href="https://band.us/n/a9a9b15ag3H3w" target="_blank" rel="noopener noreferrer">Join Our Band Community</a>
     </div>
   </div>
 
   <div class="band-cta">
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; color:var(--cream); margin-bottom:1rem;">Questions? We're Here.</h2>
-    <p>If you're having trouble accessing Band or have any questions about the community, reach out to Danyelle directly. Current families can also message through Band once they're connected.</p>
-    <a class="btn" href="mailto:seasonsschoolhouse@gmail.com" style="border-color:var(--sage-lt); color:var(--cream);">Email Danyelle</a>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--cream);margin-bottom:1rem;">Questions? We&rsquo;re Here.</h2>
+    <p>If you&rsquo;re having trouble accessing Band or have any questions, reach out to Danyelle directly.</p>
+    <a class="btn" href="mailto:myseasonsschoolhouse@gmail.com" style="border-color:var(--sage-lt);color:var(--cream);">Email Danyelle</a>
   </div>
 
   <footer>
@@ -1345,12 +1621,13 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
       <a href="about.html">Our Story</a>
       <a href="values.html">Our Values</a>
       <a href="program.html">Our Program</a>
+      <a href="expect.html">What to Expect</a>
+      <a href="gallery.html">Gallery</a>
       <a href="apply.html">Apply</a>
       <a href="contact.html">Contact</a>
     </div>
-    <p>© 2025 · Danyelle Holt · Flagler County, FL · seasonsschoolhouse@gmail.com</p>
+    <p>&copy; 2024 &middot; Seasons Schoolhouse &middot; Flagler County, FL &middot; myseasonsschoolhouse@gmail.com</p>
   </footer>
-
 </div>
 <script src="script.js"></script>
 </body>
