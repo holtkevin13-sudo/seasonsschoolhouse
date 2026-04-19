@@ -8,9 +8,10 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <meta property="og:title" content="Our Values — Seasons Schoolhouse" />
   <meta property="og:image" content="logo.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-/* ─── RESET & VARIABLES ─── */
+  <style>/* ─── RESET & VARIABLES ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -1215,13 +1216,16 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   .container { padding: 2.5rem 1.2rem; }
 }
 
-  </style>
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu { display: block; }
+}
+.hero::before, .hero::after { display: none; }
+</style>
 </head>
 <body>
-
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="logo.png" alt="Seasons Schoolhouse Logo" />
+    <img src="logo.png" alt="Seasons Schoolhouse" />
     <div class="nav-logo-text">Seasons Schoolhouse<span>Learning Through Every Season</span></div>
   </a>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -1230,15 +1234,16 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li class="dropdown">
-      <button onclick="toggleDropdown('about-dd', event)">About ▾</button>
+      <button onclick="toggleDropdown('about-dd', event)">About &#9662;</button>
       <ul class="dropdown-menu" id="about-dd">
         <li><a href="about.html">Our Story</a></li>
         <li><a href="values.html" class="active">Our Values</a></li>
         <li><a href="program.html">Our Program</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
       </ul>
     </li>
     <li class="dropdown">
-      <button onclick="toggleDropdown('resources-dd', event)">Resources ▾</button>
+      <button onclick="toggleDropdown('resources-dd', event)">Resources &#9662;</button>
       <ul class="dropdown-menu" id="resources-dd">
         <li><a href="apply.html">Apply</a></li>
         <li><a href="handbook.html">Parent Handbook</a></li>
@@ -1249,79 +1254,61 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
-
 <div class="page-wrapper">
-
   <div class="page-hero">
     <p class="page-label">What We Stand For</p>
     <h1 class="page-title">Our <em>Values</em></h1>
-    <p class="page-subtitle">Seasons Schoolhouse was built on a shared vision — families who believe that learning is a way of life, not just a subject to be covered.</p>
+    <p class="page-subtitle">Everything we do at Seasons Schoolhouse is shaped by a few guiding values. These are not just ideas on paper — they are reflected in how we gather, teach, and grow together.</p>
   </div>
 
-  <div class="values-intro">
-    <p>We are an enrichment co-op, not a school. What holds us together isn't a curriculum or a checklist — it's a set of deeply held beliefs about how children grow, how families thrive, and what learning really looks like when it's done with intention and joy.</p>
-  </div>
-
-  <div class="values-grid">
+  <div class="values-grid" style="padding-top:3rem;">
 
     <div class="value-card">
-      <span class="value-icon">🤝</span>
-      <h3>Community First</h3>
-      <p>We believe children learn better alongside other children, and parents grow stronger alongside other parents. Seasons Schoolhouse exists to be that gathering place — a circle of families who show up for one another, season after season.</p>
-    </div>
-
-    <div class="value-card">
-      <span class="value-icon">🌿</span>
-      <h3>Hands-On Learning</h3>
-      <p>We learn by doing. Whether it's kneading dough, pressing leaves, or tracing history on a hand-drawn map, we believe children retain what they experience far more deeply than what they simply hear or read.</p>
+      <span class="value-icon">🌱</span>
+      <h3>Learning Through Experience</h3>
+      <p>We believe children understand the world best when they can engage with it directly. Whether we are studying nature, history, science, or community, we prioritize hands-on, real-world learning that makes concepts come alive.</p>
     </div>
 
     <div class="value-card">
       <span class="value-icon">🍂</span>
-      <h3>Rooted in the Seasons</h3>
-      <p>Nature is our greatest teacher. We shape our gatherings around the rhythms of the natural year — honoring each season as its own invitation to explore, create, and wonder. Learning slows down and deepens when it lives in the real world.</p>
+      <h3>Rhythm Over Rush</h3>
+      <p>We take a steady, thoughtful approach to learning. By focusing on one guiding theme at a time, we give children the space to connect ideas, revisit concepts, and build understanding over time — not in isolated lessons.</p>
     </div>
 
     <div class="value-card">
-      <span class="value-icon">💛</span>
-      <h3>Intentional Education</h3>
-      <p>Every family here has made a deliberate, countercultural choice. We honor that. We don't pursue busyness for its own sake — we pursue depth. Each gathering is purposefully planned to offer something meaningful, not just something to fill time.</p>
+      <span class="value-icon">🤝</span>
+      <h3>Community Matters</h3>
+      <p>This is a shared learning environment. Parents are present, children are known, and relationships are part of the foundation. We value consistency, participation, and showing up for one another — season after season.</p>
     </div>
 
     <div class="value-card">
-      <span class="value-icon">🏡</span>
-      <h3>Faith & Family</h3>
-      <p>At the core of our co-op is a respect for the family as the foundation of a child's education. We welcome families who are guided by faith and who see their homeschool journey as an extension of the values they cultivate at home.</p>
+      <span class="value-icon">✝️</span>
+      <h3>Respect for Creation</h3>
+      <p>We view learning through a Biblical worldview, recognizing God as Creator. This perspective naturally shapes how we observe, discuss, and appreciate the world around us — from nature study to history to community.</p>
     </div>
 
     <div class="value-card">
-      <span class="value-icon">📖</span>
-      <h3>Practical Wisdom</h3>
-      <p>We place high value on skills that have real-world meaning — cooking, sewing, gardening, serving others. These are not extras. They are the fabric of a well-rounded life, and we believe children deserve to learn them young.</p>
+      <span class="value-icon">📚</span>
+      <h3>Enrichment, Not Replacement</h3>
+      <p>Seasons Schoolhouse is designed to complement homeschool learning at home. We are not a core academic program. Instead, we focus on enrichment through nature study, science, social studies, STEAM experiences, and community exploration.</p>
     </div>
 
     <div class="value-card">
-      <span class="value-icon">🌱</span>
-      <h3>Shared Vision</h3>
-      <p>Seasons Schoolhouse is not for every family — and that's by design. We are looking for families who share a common vision: that learning is relational, that community matters, and that childhood is worth protecting and enriching.</p>
-    </div>
-
-    <div class="value-card">
-      <span class="value-icon">🤍</span>
-      <h3>Grace & Flexibility</h3>
-      <p>We are a community of real families with real lives. We extend grace freely — to each other, to our children, and to ourselves. We hold our standards high, but we hold each other with kindness.</p>
+      <span class="value-icon">🌿</span>
+      <h3>Growth in Seasons</h3>
+      <p>We believe learning happens over time. Like the natural world we often study, growth is not rushed — it unfolds in seasons. We honor that rhythm in every gathering, every theme, and every year we spend together.</p>
     </div>
 
   </div>
 
   <div class="values-closing">
-    <p>"We are not just building a co-op. We are building a community of families who believe that the way they educate their children is one of the most important decisions they will ever make."</p>
+    <p>"A space where learning is shared. Where children are known. Where parents are present. And where community is built with intention, not convenience."</p>
   </div>
 
-  <div style="padding: 4rem 2rem; text-align:center; background:var(--cream);">
+  <div style="padding:4rem 2rem;text-align:center;background:var(--cream);">
     <p class="page-label">Continue Exploring</p>
-    <p style="font-size:0.92rem; color:var(--brown); margin-bottom:2rem; max-width:480px; margin-left:auto; margin-right:auto; line-height:1.9;">See how our values come to life in everything we do each time we gather.</p>
-    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+    <p style="font-size:0.92rem;color:var(--brown);margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.9;">See how our values shape every gathering, every field trip, and every season we spend together.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
       <a class="btn btn-solid" href="program.html">See Our Program</a>
       <a class="btn" href="apply.html">Apply to Join</a>
     </div>
@@ -1336,12 +1323,12 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
       <a href="about.html">Our Story</a>
       <a href="values.html">Our Values</a>
       <a href="program.html">Our Program</a>
+      <a href="gallery.html">Gallery</a>
       <a href="apply.html">Apply</a>
       <a href="contact.html">Contact</a>
     </div>
-    <p>© 2025 · Danyelle Holt · Flagler County, FL · seasonsschoolhouse@gmail.com</p>
+    <p>&copy; 2025 &middot; Seasons Schoolhouse &middot; Flagler County, FL &middot; myseasonsschoolhouse@gmail.com</p>
   </footer>
-
 </div>
 <script src="script.js"></script>
 </body>
