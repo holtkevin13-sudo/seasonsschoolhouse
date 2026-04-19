@@ -1520,6 +1520,55 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   .handbook-layout { grid-template-columns: 1fr; }
   .handbook-toc-sticky { position: static; }
 }
+
+
+.dropdown-menu {
+  top: calc(100% + 2px) !important;
+  margin-top: 0 !important;
+}
+
+/* Invisible bridge fills gap so hover doesn't break */
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  z-index: 499;
+}
+
+
+/* ─── DROPDOWN HOVER — desktop only, no gap ─── */
+@media (min-width: 769px) {
+  /* Pure CSS hover — reliable, no JS conflicts */
+  .dropdown:hover .dropdown-menu { display: block; }
+
+  /* top: 100% = flush against button, padding creates visual gap
+     while keeping the hover area continuous — no disappearing */
+  .dropdown-menu {
+    top: 100% !important;
+    padding-top: 8px !important;
+    margin-top: 0 !important;
+  }
+
+  /* Invisible hover bridge — fills any remaining gap */
+  .dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -10px;
+    right: -10px;
+    height: 10px;
+    z-index: 499;
+  }
+}
+
+/* Remove onclick from desktop — CSS handles it */
+@media (min-width: 769px) {
+  .dropdown-menu.open { display: block; }
+}
+
 </style>
 </head>
 <body>
@@ -1534,18 +1583,17 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li class="dropdown">
-      <button onclick="toggleDropdown('about-dd',event)">About &#9662;</button>
+      <button class="dropdown-btn" data-target="about-dd">About &#9662;</button>
       <ul class="dropdown-menu" id="about-dd">
         <li><a href="about.html">Our Story</a></li>
         <li><a href="values.html">Our Values</a></li>
         <li><a href="program.html">Our Program</a></li>
         <li><a href="expect.html">What to Expect</a></li>
-        <li><a href="expect.html">What to Expect</a>
-      <a href="gallery.html">Gallery</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
       </ul>
     </li>
     <li class="dropdown">
-      <button onclick="toggleDropdown('resources-dd',event)">Resources &#9662;</button>
+      <button class="dropdown-btn" data-target="resources-dd">Resources &#9662;</button>
       <ul class="dropdown-menu" id="resources-dd">
         <li><a href="apply.html" class="active">Apply</a></li>
         <li><a href="handbook.html">Parent Handbook</a></li>
