@@ -8,6 +8,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <meta property="og:title" content="Parent Handbook — Seasons Schoolhouse" />
   <meta property="og:image" content="logo.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>/* ─── RESET & VARIABLES ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1518,54 +1520,16 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   .handbook-toc-sticky { position: static; }
 }
 
-
-.dropdown-menu {
-  top: calc(100% + 2px) !important;
-  margin-top: 0 !important;
-}
-
-/* Invisible bridge fills gap so hover doesn't break */
-.dropdown::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  height: 6px;
-  z-index: 499;
-}
-
-
-/* ─── DROPDOWN HOVER — desktop only, no gap ─── */
 @media (min-width: 769px) {
-  /* Pure CSS hover — reliable, no JS conflicts */
-  .dropdown:hover .dropdown-menu { display: block; }
-
-  /* top: 100% = flush against button, padding creates visual gap
-     while keeping the hover area continuous — no disappearing */
-  .dropdown-menu {
-    top: 100% !important;
-    padding-top: 8px !important;
-    margin-top: 0 !important;
-  }
-
-  /* Invisible hover bridge — fills any remaining gap */
-  .dropdown::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: -10px;
-    right: -10px;
-    height: 10px;
-    z-index: 499;
-  }
+  .dropdown:hover > .dropdown-menu { display: block; }
+  .dropdown-menu { top: 100% !important; padding-top: 8px !important; margin-top: 0 !important; }
+  .dropdown::after { content: ''; position: absolute; top: 100%; left: -10px; right: -10px; height: 10px; z-index: 499; }
 }
-
-/* Remove onclick from desktop — CSS handles it */
-@media (min-width: 769px) {
-  .dropdown-menu.open { display: block; }
+@media (max-width: 768px) {
+  .dropdown-menu { display: none; }
+  .dropdown-menu.open { display: block; position: static; transform: none; box-shadow: none; border: none; padding-left: 1rem; margin-top: 0; }
 }
-
+.hero::before, .hero::after { display: none; }
 </style>
 </head>
 <body>
@@ -1611,211 +1575,218 @@ nav { border-bottom: 2px solid var(--sage) !important; }
     <p class="page-subtitle">Everything you need to know about how Seasons Schoolhouse operates, what we expect, and how we care for one another.</p>
   </div>
 
-  <!-- Download bar -->
   <div class="handbook-download-bar">
-    <p>📄 A downloadable PDF version of this handbook is available for enrolled families.</p>
-    <a class="btn" href="handbook.pdf" download style="border-color:var(--sage-lt); color:var(--cream);">Download PDF</a>
+    <p>&#128196; A downloadable PDF version of this handbook is available for enrolled families.</p>
+    <a class="btn" href="handbook.pdf" download style="border-color:var(--sage-lt);color:var(--cream);">Download PDF</a>
   </div>
 
-  <div class="handbook-wrapper">
+  <div class="handbook-layout">
 
-    <!-- Table of Contents -->
-    <div class="handbook-toc">
-      <h3>Table of Contents</h3>
+    <!-- STICKY TOC -->
+    <div class="handbook-toc-sticky">
+      <h3>Contents</h3>
       <ol>
         <li><a href="#welcome">Welcome Letter</a></li>
-        <li><a href="#mission">Mission & Vision</a></li>
-        <li><a href="#overview">Co-op Overview</a></li>
-        <li><a href="#structure">Meeting Structure & Expectations</a></li>
+        <li><a href="#mission">Mission &amp; Vision</a></li>
+        <li><a href="#overview">Program Overview</a></li>
+        <li><a href="#structure">Meeting Structure</a></li>
         <li><a href="#participation">Parent Participation</a></li>
         <li><a href="#attendance">Attendance Policy</a></li>
-        <li><a href="#health">Health & Illness Policy</a></li>
-        <li><a href="#safety">Child Safety & Supervision</a></li>
+        <li><a href="#health">Health &amp; Illness</a></li>
+        <li><a href="#safety">Child Safety</a></li>
         <li><a href="#communication">Communication</a></li>
         <li><a href="#conduct">Code of Conduct</a></li>
-        <li><a href="#privacy">Photo & Privacy Policy</a></li>
-        <li><a href="#fees">Fees & Participation</a></li>
+        <li><a href="#privacy">Photo &amp; Privacy</a></li>
+        <li><a href="#fees">Fees</a></li>
         <li><a href="#acknowledgment">Acknowledgment</a></li>
       </ol>
     </div>
 
-    <!-- 1. Welcome -->
-    <div class="handbook-section" id="welcome">
-      <h2>1. Welcome Letter</h2>
-      <p>Dear Seasons Schoolhouse Family,</p>
-      <p>Welcome — and thank you for being here. Whether you are a new family just beginning your journey with us, or a returning family stepping into another year, I want you to know how deeply I value your presence in this community.</p>
-      <p>Seasons Schoolhouse was born out of a simple but powerful belief: that children learn best when they are engaged, that families grow stronger in community, and that the homeschool journey — while beautiful — doesn't have to be walked alone.</p>
-      <p>This handbook is your guide to how we operate, what we expect of one another, and how we care for the children and families in our circle. Please read it carefully and hold onto it as a reference throughout the year.</p>
-      <p>I am so honored to do this alongside your family.</p>
-      <p style="margin-top:1rem;">With gratitude,<br><strong style="font-weight:500; font-family:'Cormorant Garamond',serif; font-size:1.1rem;">Danyelle Holt</strong><br><span style="font-size:0.82rem; color:var(--tan);">Founder, Seasons Schoolhouse</span></p>
-    </div>
+    <!-- HANDBOOK CONTENT -->
+    <div class="handbook-wrapper" style="padding:0;">
 
-    <!-- 2. Mission -->
-    <div class="handbook-section" id="mission">
-      <h2>2. Mission & Vision</h2>
-      <p><strong>Mission:</strong> To provide a warm, intentional enrichment community for homeschool families in Flagler County, where children learn through hands-on experiences and families grow through shared purpose.</p>
-      <p><strong>Vision:</strong> A co-op where every family feels seen, every child feels capable, and every season brings something worth remembering.</p>
-      <p><strong>Philosophy:</strong> We believe that education is not a product to be delivered, but a life to be lived. We do not rush through content — we dwell in it. We do not simply teach skills — we practice them together. Learning at Seasons Schoolhouse is relational, seasonal, and rooted in the real world.</p>
-    </div>
+      <!-- 1. WELCOME -->
+      <div class="handbook-section" id="welcome">
+        <h2>1. Welcome Letter</h2>
+        <p>Dear Seasons Schoolhouse Family,</p>
+        <p>Welcome &mdash; and thank you for being here. Whether you are a new family just beginning your journey with us, or a returning family stepping into another year, I want you to know how deeply I value your presence in this community.</p>
+        <p>Seasons Schoolhouse was born out of a simple but powerful belief: that children learn best when they are fully immersed in a joyful, engaging environment, that families grow stronger in community, and that the homeschool journey &mdash; while beautiful &mdash; doesn&rsquo;t have to be walked alone.</p>
+        <p>This handbook is your guide to how we operate, what we expect of one another, and how we care for the children and families in our circle. Please read it carefully and hold onto it as a reference throughout the year.</p>
+        <p>I am so honored to do this alongside your family.</p>
+        <p style="margin-top:1rem;">With gratitude,<br><strong style="font-weight:500;font-family:'Cormorant Garamond',serif;font-size:1.1rem;">Danyelle Holt</strong><br><span style="font-size:0.82rem;color:var(--tan);">Founder, Seasons Schoolhouse</span></p>
+      </div>
 
-    <!-- 3. Overview -->
-    <div class="handbook-section" id="overview">
-      <h2>3. Co-op Overview</h2>
-      <h3>What We Are</h3>
-      <p>Seasons Schoolhouse is a K–8 homeschool enrichment co-op based in Flagler County, Florida. We are not a school. We do not replace your homeschool — we enrich it. Our gatherings are designed to complement any homeschool method or philosophy.</p>
-      <h3>Who We Serve</h3>
-      <p>Families with children in kindergarten through 8th grade who are actively homeschooling and share our vision for intentional, community-centered education.</p>
-      <h3>Meeting Schedule</h3>
-      <p>We meet bi-weekly (every two weeks) during the school year, September through May, with a Kick-off gathering in August and an End of Year Celebration in May. All meetings and field trips take place in Flagler County, with the exception of occasional educational field trips beyond county lines.</p>
-      <h3>Current Year</h3>
-      <p>We are currently accepting enrollments for the 2026–2027 school year.</p>
-    </div>
+      <!-- 2. MISSION -->
+      <div class="handbook-section" id="mission">
+        <h2>2. Mission &amp; Vision</h2>
+        <p><strong>Mission:</strong> To provide a warm, faith-informed enrichment community for homeschool families in Flagler County, where children learn through immersive, hands-on experiences and families grow stronger together through shared purpose and intentional community.</p>
+        <p><strong>Vision:</strong> To grow a thriving, multigenerational community of homeschool families in Flagler County &mdash; one where children are known, parents are connected, and every season brings deeper roots and new growth. As Seasons Schoolhouse grows, so does our ability to serve more families, expand our experiences, and strengthen the homeschool community around us.</p>
+        <p><strong>Philosophy:</strong> We believe education is not a product to be delivered &mdash; it is a life to be lived. At Seasons Schoolhouse, learning is immersive, joyful, and unhurried. We view the world through a Biblical worldview, recognizing God as Creator, which shapes how we observe, explore, and appreciate everything around us. We do not rush through content &mdash; we dwell in it. We do not simply teach skills &mdash; we experience them together. Learning here is relational, seasonal, and deeply rooted in the real world.</p>
+      </div>
 
-    <!-- 4. Structure -->
-    <div class="handbook-section" id="structure">
-      <h2>4. Meeting Structure & Expectations</h2>
-      <p>Each Seasons Schoolhouse gathering is a full, planned day of enrichment. Gatherings are not drop-off events — parents are expected to be present and engaged throughout.</p>
-      <h3>Typical Gathering Flow</h3>
-      <ul>
-        <li>Welcome and opening circle</li>
-        <li>Seasonal activity or project (hands-on focus)</li>
-        <li>Group meal or snack time (community-centered)</li>
-        <li>Second activity block or outdoor time</li>
-        <li>Closing and wrap-up</li>
-      </ul>
-      <h3>What to Bring</h3>
-      <ul>
-        <li>Any supplies communicated in advance via Band</li>
-        <li>Lunch and snacks for your children</li>
-        <li>A willing and engaged attitude</li>
-      </ul>
-      <h3>Punctuality</h3>
-      <p>We ask that families arrive on time. Our gatherings are structured and community-dependent — late arrivals can disrupt the flow for everyone. If you anticipate being late, please communicate in advance through Band.</p>
-    </div>
+      <!-- 3. OVERVIEW -->
+      <div class="handbook-section" id="overview">
+        <h2>3. Program Overview</h2>
+        <h3>What We Are</h3>
+        <p>Seasons Schoolhouse is a bi-weekly homeschool enrichment program based in Flagler County, Florida. We are not a school. We do not replace what your family is already doing at home &mdash; we enrich it. Our program is built to complement any homeschool method or philosophy, adding depth, community, and real-world experience to your child&rsquo;s education.</p>
+        <h3>Who We Serve</h3>
+        <p>Homeschool families with children in 3rd through 8th grade who share our vision for intentional, faith-informed, community-centered learning. We welcome families of all homeschool backgrounds and approaches.</p>
+        <h3>Meeting Schedule</h3>
+        <p>We meet bi-weekly throughout the program year, August through May, with a Kick-off gathering in August and an End of Year Celebration in May. Most gatherings and field trips take place within Flagler County. Some field trips may extend into surrounding areas or beyond county lines for educational purposes &mdash; these will always be communicated in advance through Band.</p>
+        <h3>Current Year</h3>
+        <p>We are currently accepting enrollments for the 2026&ndash;2027 school year.</p>
+      </div>
 
-    <!-- 5. Parent Participation -->
-    <div class="handbook-section" id="participation">
-      <h2>5. Parent Participation</h2>
-      <p>Seasons Schoolhouse is a cooperative — which means it runs because parents show up and contribute. Active participation is not optional; it is the foundation of everything we do together.</p>
-      <h3>Expectations for All Parents</h3>
-      <ul>
-        <li>Attend all scheduled gatherings unless excused in advance</li>
-        <li>Participate actively in activities alongside your children</li>
-        <li>Contribute to the co-op through assigned roles (preparation, setup, cleanup, leading activities, etc.)</li>
-        <li>Respond to Band communications in a timely manner</li>
-        <li>Support the community by bringing a spirit of service and collaboration</li>
-      </ul>
-      <p>Families who consistently do not participate may be asked to step back from the co-op. This is a community effort, and every family's contribution matters.</p>
-    </div>
+      <!-- 4. STRUCTURE -->
+      <div class="handbook-section" id="structure">
+        <h2>4. Meeting Structure &amp; Expectations</h2>
+        <p>Each Seasons Schoolhouse gathering is a purposefully planned half-day of enrichment. We typically meet from 10:00 AM to 12:30 PM. Times may occasionally vary for special events, parties, or field trips &mdash; any changes will always be communicated in advance through Band.</p>
+        <h3>Typical Gathering Flow</h3>
+        <ul>
+          <li>Arrival &amp; Welcome &mdash; Families arrive, children reconnect, and the day begins warmly</li>
+          <li>Structured Teaching Time &mdash; We open as a group with an introduction to the day&rsquo;s topic, connected to our current yearly theme</li>
+          <li>Hands-On Activity &mdash; Students engage with what they&rsquo;ve learned through building, creating, observing, or experimenting together</li>
+          <li>Free Play &amp; Social Time &mdash; We close with unstructured time for children to explore, connect, and enjoy one another &mdash; outdoors when possible</li>
+        </ul>
+        <h3>What to Bring</h3>
+        <ul>
+          <li>Water bottle</li>
+          <li>Lunch and snacks for your children</li>
+          <li>Any supplies communicated in advance via Band</li>
+        </ul>
+        <h3>Punctuality</h3>
+        <p>We know that life with a family is beautifully unpredictable &mdash; and we get it. We simply ask that families do their best to arrive on time, as our gatherings are community-driven and flow best when everyone is present from the start. If something comes up and you are running behind, please reach out to the program leader through Band so we know to expect you. We would always rather see you late than not at all.</p>
+      </div>
 
-    <!-- 6. Attendance -->
-    <div class="handbook-section" id="attendance">
-      <h2>6. Attendance Policy</h2>
-      <p>Regular attendance is essential for your family and for the health of the community. Because our gatherings are collaborative and co-operative, an absent family affects the whole group.</p>
-      <h3>Excused Absences</h3>
-      <ul>
-        <li>Illness (please do not attend if your child or a family member is unwell — see Health Policy)</li>
-        <li>Family emergencies</li>
-        <li>Pre-communicated conflicts (notified at least one week in advance when possible)</li>
-      </ul>
-      <h3>Communication</h3>
-      <p>All absences should be communicated through the Band app as early as possible. Consistent unexcused absences (three or more in a school year) may result in a conversation about continued enrollment.</p>
-    </div>
+      <!-- 5. PARTICIPATION -->
+      <div class="handbook-section" id="participation">
+        <h2>5. Parent Participation</h2>
+        <p>Seasons Schoolhouse is built on the foundation of community &mdash; which means it runs because parents show up and contribute. Active participation is not optional; it is the foundation of everything we do together.</p>
+        <h3>Expectations for All Parents</h3>
+        <ul>
+          <li>Be present at gatherings for the duration of the program</li>
+          <li>Participate actively in activities alongside your children</li>
+          <li>Contribute to the program through shared responsibilities such as setup, cleanup, and preparation when needed</li>
+          <li>Respond to Band communications in a timely manner</li>
+          <li>Support the community by bringing a spirit of service and collaboration</li>
+        </ul>
+        <p>Families who consistently do not participate may be asked to step back from the program. This is a community effort, and every family&rsquo;s contribution matters.</p>
+      </div>
 
-    <!-- 7. Health -->
-    <div class="handbook-section" id="health">
-      <h2>7. Health & Illness Policy</h2>
-      <p>The health and wellbeing of every child and family in our co-op is a shared responsibility. We ask that families take this seriously and err on the side of caution.</p>
-      <h3>Please Keep Your Child Home If They Have:</h3>
-      <ul>
-        <li>Fever within the last 24 hours</li>
-        <li>Vomiting or diarrhea within the last 24 hours</li>
-        <li>Active, contagious illness (pink eye, strep, flu, etc.)</li>
-        <li>Any unexplained rash or symptoms</li>
-      </ul>
-      <p>We understand this can be disappointing, but keeping our community healthy is an act of love and respect. Your child will be missed and welcomed back when they are well.</p>
-      <h3>Medications</h3>
-      <p>Parents are responsible for managing any medications their children require. Please communicate any medical needs or allergies to Danyelle before the start of the school year.</p>
-    </div>
+      <!-- 6. ATTENDANCE -->
+      <div class="handbook-section" id="attendance">
+        <h2>6. Attendance Policy</h2>
+        <p>We believe that consistency is one of the greatest gifts a family can bring to this community. Because our program is built around relationships, rhythm, and shared experience, regular attendance matters &mdash; not as a rule for the sake of rules, but because every family&rsquo;s presence contributes to the experience of every other family in the room.</p>
+        <h3>Attendance Expectation</h3>
+        <p>We ask that families maintain a minimum of 75% attendance throughout the program year. For the 2026&ndash;2027 school year, this means families may miss no more than 5 gatherings out of 20 scheduled meetings. Attendance will be taken at each gathering.</p>
+        <p>We know that life happens &mdash; and we hold this expectation with grace. The 75% policy exists not to penalize families, but to protect the integrity and consistency of the community for everyone enrolled.</p>
+        <h3>Excused Absences</h3>
+        <ul>
+          <li>Illness (please do not attend if your child or any family member is unwell &mdash; see Health &amp; Illness Policy)</li>
+          <li>Family emergencies</li>
+          <li>Pre-communicated conflicts notified as early as possible through Band</li>
+        </ul>
+        <h3>Communication</h3>
+        <p>All absences should be communicated through Band as early as possible. If a family falls below the 75% attendance threshold, the program leader will reach out for a conversation. Our goal is always to find a path forward together &mdash; but consistent unexcused absences may result in a conversation about continued enrollment.</p>
+      </div>
 
-    <!-- 8. Safety -->
-    <div class="handbook-section" id="safety">
-      <h2>8. Child Safety & Supervision</h2>
-      <p>The safety of every child is our highest priority. Because Seasons Schoolhouse is a co-op model, parents share responsibility for the supervision and safety of all children present.</p>
-      <h3>General Guidelines</h3>
-      <ul>
-        <li>All parents are responsible for supervising their own children at all times, unless otherwise arranged</li>
-        <li>Children should not be left unattended at any gathering</li>
-        <li>Any safety concerns should be raised immediately with Danyelle</li>
-        <li>We maintain a safe, respectful environment for every child — unkind behavior, bullying, or unsafe conduct will be addressed promptly</li>
-      </ul>
-      <h3>Emergencies</h3>
-      <p>In the event of a medical emergency, Danyelle will call 911 and notify parents immediately. All gathering locations will have a first aid kit on site. Parents are encouraged to share any relevant medical information (allergies, conditions, emergency contacts) at the start of the year.</p>
-    </div>
+      <!-- 7. HEALTH -->
+      <div class="handbook-section" id="health">
+        <h2>7. Health &amp; Illness Policy</h2>
+        <p>The health and wellbeing of every child and family in our program is a shared responsibility. We ask that families take this seriously and err on the side of caution.</p>
+        <h3>Please Keep Your Child Home If They Have:</h3>
+        <ul>
+          <li>Fever within the last 24 hours</li>
+          <li>Vomiting or diarrhea within the last 24 hours</li>
+          <li>Active, contagious illness (pink eye, strep, flu, etc.)</li>
+          <li>Any unexplained rash or symptoms</li>
+          <li>Had a lice treatment within the past week &mdash; please notify the program leader before attending</li>
+        </ul>
+        <h3>Medications &amp; Allergies</h3>
+        <p>Parents are responsible for managing their children&rsquo;s medications during gatherings. Please communicate any known allergies, dietary restrictions, or medical needs to the program leader before the school year begins. Because gatherings often involve food and cooking activities, this information helps us keep every child safe and included.</p>
+      </div>
 
-    <!-- 9. Communication -->
-    <div class="handbook-section" id="communication">
-      <h2>9. Communication</h2>
-      <p>All enrolled families will be added to our private Band community, which serves as our primary communication platform. Band is where you will find:</p>
-      <ul>
-        <li>Gathering announcements and reminders</li>
-        <li>Supply lists and preparation notes</li>
-        <li>Group chat and community updates</li>
-        <li>Shared photos from gatherings</li>
-        <li>The live, up-to-date calendar</li>
-      </ul>
-      <p>We ask that all families download the Band app and check it regularly. Important announcements will not be repeated via email or other channels.</p>
-      <p>For questions or concerns outside of Band, you may reach Danyelle at <a href="mailto:myseasonsschoolhouse@gmail.com" style="color:var(--sage);">myseasonsschoolhouse@gmail.com</a>.</p>
-    </div>
+      <!-- 8. SAFETY -->
+      <div class="handbook-section" id="safety">
+        <h2>8. Child Safety &amp; Supervision</h2>
+        <p>The safety of every child is our highest priority. Parents are present at all gatherings and share responsibility for the supervision and safety of all children.</p>
+        <h3>General Guidelines</h3>
+        <ul>
+          <li>All parents are responsible for supervising their own children at all times</li>
+          <li>Children should remain within the designated gathering area at all times and should not leave without a parent or guardian</li>
+          <li>Children should not be left unattended at any gathering</li>
+          <li>Any safety concerns should be raised immediately with the program leader</li>
+          <li>We maintain a safe, respectful environment for every child &mdash; unkind behavior, bullying, or unsafe conduct will be addressed promptly</li>
+        </ul>
+        <h3>Emergencies</h3>
+        <p>Parents are present at all gatherings and are responsible for their children&rsquo;s safety and medical decisions at all times. In the event of an emergency, parents are expected to take the appropriate action for their child. Please ensure your emergency contact information is up to date and shared with the program leader at the start of the year.</p>
+      </div>
 
-    <!-- 10. Conduct -->
-    <div class="handbook-section" id="conduct">
-      <h2>10. Code of Conduct</h2>
-      <p>Seasons Schoolhouse is a place of warmth, respect, and community. We ask every family — parents and children alike — to uphold the following standards.</p>
-      <h3>For Children</h3>
-      <ul>
-        <li>Treat every person with kindness and respect</li>
-        <li>Care for shared spaces and materials</li>
-        <li>Participate with a willing and open spirit</li>
-        <li>Use kind words and resolve conflicts peacefully</li>
-      </ul>
-      <h3>For Parents</h3>
-      <ul>
-        <li>Speak about other families and children with respect — always and in all settings</li>
-        <li>Support the co-op leadership and trust the process</li>
-        <li>Bring concerns directly to Danyelle, not to the group</li>
-        <li>Model the behavior and spirit you hope to see in your children</li>
-      </ul>
-      <p>Conduct that is consistently harmful to the community — whether from a child or a parent — may result in a conversation about continued enrollment. We seek to handle all concerns with grace and directness.</p>
-    </div>
+      <!-- 9. COMMUNICATION -->
+      <div class="handbook-section" id="communication">
+        <h2>9. Communication</h2>
+        <p>All enrolled families will be added to our private Band community, which serves as our primary communication platform. Band is where you will find:</p>
+        <ul>
+          <li>Gathering announcements and reminders</li>
+          <li>Supply lists and preparation notes</li>
+          <li>Group chat and community updates</li>
+          <li>Shared photos from gatherings</li>
+          <li>The live, up-to-date calendar</li>
+        </ul>
+        <p>We ask that all families download the Band app and check it regularly. Important announcements will not be repeated via email or other channels.</p>
+        <p>For questions or concerns outside of Band, you may reach Danyelle at <a href="mailto:myseasonsschoolhouse@gmail.com" style="color:var(--sage);">myseasonsschoolhouse@gmail.com</a>.</p>
+      </div>
 
-    <!-- 11. Privacy -->
-    <div class="handbook-section" id="privacy">
-      <h2>11. Photo & Privacy Policy</h2>
-      <p>We take the privacy of every child in our co-op seriously. Seasons Schoolhouse does not publish photos of children on our public website or social media. Photos shared within our Band community are for enrolled families only and should not be shared publicly without explicit permission from the parents of all children pictured.</p>
-      <h3>Photo Guidelines</h3>
-      <ul>
-        <li>No photos of other families' children should be posted publicly without consent</li>
-        <li>Photos shared in Band are for community use only — please respect the privacy of all families</li>
-        <li>If you have concerns about a specific photo, please reach out to Danyelle directly</li>
-      </ul>
-    </div>
+      <!-- 10. CONDUCT -->
+      <div class="handbook-section" id="conduct">
+        <h2>10. Code of Conduct</h2>
+        <p>Seasons Schoolhouse is a place of warmth, respect, and community. We ask every family &mdash; parents and children alike &mdash; to uphold the following standards.</p>
+        <h3>For Children</h3>
+        <ul>
+          <li>Treat every person with kindness and respect</li>
+          <li>Care for shared spaces and materials</li>
+          <li>Participate with a willing and open spirit</li>
+          <li>Use kind words and resolve conflicts peacefully</li>
+        </ul>
+        <h3>For Parents</h3>
+        <ul>
+          <li>Speak about other families and children with respect &mdash; always and in all settings</li>
+          <li>Respect program leadership and any guest teachers or facilitators who come to serve our community</li>
+          <li>Encourage families to resolve conflicts amongst themselves first, with grace and direct communication. If a resolution cannot be reached, bring the concern to the program leader</li>
+          <li>Model the behavior and spirit you hope to see in your children</li>
+          <li>Out of respect for our children and families, we ask that parents refrain from smoking or vaping during gatherings and be mindful of language in the presence of children</li>
+        </ul>
+        <p>Conduct that is consistently harmful to the community &mdash; whether from a child or a parent &mdash; may result in a conversation about continued enrollment. We seek to handle all concerns with grace and directness.</p>
+      </div>
 
-    <!-- 12. Fees -->
-    <div class="handbook-section" id="fees">
-      <h2>12. Fees & Participation</h2>
-      <p>Details regarding co-op fees, material contributions, and any associated costs for the 2026–2027 school year will be communicated directly to enrolled families. Fees, when applicable, help cover shared materials, activity supplies, and any field trip costs.</p>
-      <p>We believe financial barriers should never prevent a family from participating. If you have concerns about fees, please speak privately with Danyelle. We will work something out together.</p>
-    </div>
+      <!-- 11. PRIVACY -->
+      <div class="handbook-section" id="privacy">
+        <h2>11. Photo &amp; Privacy Policy</h2>
+        <p>We take the privacy of every child in our program seriously. Seasons Schoolhouse does not publish photos of children on our public website or social media. Photos shared within our Band community are for enrolled families only and should not be shared publicly without explicit permission from the parents of all children pictured.</p>
+        <h3>Photo Guidelines</h3>
+        <ul>
+          <li>No photos of other families&rsquo; children should be posted publicly without consent</li>
+          <li>Photos shared in Band are for community use only &mdash; please respect the privacy of all families</li>
+          <li>If you have concerns about a specific photo, please reach out to the person who posted it directly. If the concern cannot be resolved, bring it to the program leader</li>
+        </ul>
+      </div>
 
-    <!-- 13. Acknowledgment -->
-    <div class="handbook-section" id="acknowledgment">
-      <h2>13. Acknowledgment</h2>
-      <p>By enrolling in Seasons Schoolhouse, families agree to have read, understood, and committed to the guidelines outlined in this handbook. We ask that both parents review this document and sign the acknowledgment form provided at enrollment.</p>
-      <p>This handbook may be updated from time to time. Families will be notified of any significant changes through Band. The most current version will always be available on this page.</p>
-      <p style="margin-top:2rem; font-size:0.88rem; color:var(--tan); font-style:italic;">Last updated: 2025 · Seasons Schoolhouse · Flagler County, FL</p>
-    </div>
+      <!-- 12. FEES -->
+      <div class="handbook-section" id="fees">
+        <h2>12. Fees &amp; Participation</h2>
+        <p>Seasons Schoolhouse operates on an annual enrollment fee that covers program costs for the full year including gatherings, field trips, parties, and materials.</p>
+        <p>Fee details for each program year will be broken down and communicated directly with enrolled families prior to the start of the school year. We are committed to full transparency so families can plan accordingly.</p>
+      </div>
 
+      <!-- 13. ACKNOWLEDGMENT -->
+      <div class="handbook-section" id="acknowledgment">
+        <h2>13. Acknowledgment</h2>
+        <p>By enrolling in Seasons Schoolhouse, families agree to have read, understood, and committed to the guidelines outlined in this handbook. We ask that both parents review this document and sign the acknowledgment form provided at enrollment, or complete the digital version linked in Band.</p>
+        <p>This handbook may be updated from time to time. Families will be notified of any significant changes through Band. The most current version will always be available on this page.</p>
+        <p style="margin-top:2rem;font-size:0.88rem;color:var(--tan);font-style:italic;">Last updated: 2024 &middot; Seasons Schoolhouse &middot; Flagler County, FL</p>
+      </div>
+
+    </div>
   </div>
 
   <footer>
@@ -1832,10 +1803,12 @@ nav { border-bottom: 2px solid var(--sage) !important; }
       <a href="apply.html">Apply</a>
       <a href="contact.html">Contact</a>
     </div>
-    <p>© 2024 · Danyelle Holt · Flagler County, FL · myseasonsschoolhouse@gmail.com</p>
+    <p>&copy; 2024 &middot; Seasons Schoolhouse &middot; Flagler County, FL &middot; myseasonsschoolhouse@gmail.com</p>
   </footer>
 
 </div>
 <script src="script.js"></script>
+</body>
+</html>
 </body>
 </html>
