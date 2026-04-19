@@ -1,46 +1,49 @@
-// ─── Dropdown Toggle ───
+// ─── Dropdown Toggle ───────────────────────────────────────────
 function toggleDropdown(id, e) {
   if (e) e.stopPropagation();
   const menu = document.getElementById(id);
   if (!menu) return;
   const isOpen = menu.classList.contains('open');
-  // Close all dropdowns first
+  // Close all first
   document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('open'));
   if (!isOpen) menu.classList.add('open');
 }
 
-// Close dropdowns on outside click
-document.addEventListener('click', function () {
-  document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('open'));
+// Close dropdowns only when clicking OUTSIDE a dropdown
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('.dropdown')) {
+    document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('open'));
+  }
 });
 
-// ─── Hamburger Menu ───
+// Prevent clicks inside dropdown menus from bubbling and closing the menu
+document.querySelectorAll('.dropdown-menu').forEach(function (menu) {
+  menu.addEventListener('click', function (e) {
+    e.stopPropagation();
+  });
+});
+
+// ─── Hamburger Menu ────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('nav-links');
 
-if (hamburger) {
+if (hamburger && navLinks) {
   hamburger.addEventListener('click', function (e) {
     e.stopPropagation();
     navLinks.classList.toggle('open');
   });
 }
 
+// Close mobile menu when clicking outside
 document.addEventListener('click', function (e) {
-  if (navLinks && !navLinks.contains(e.target) && e.target !== hamburger) {
-    navLinks.classList.remove('open');
+  if (navLinks && navLinks.classList.contains('open')) {
+    if (!navLinks.contains(e.target) && e.target !== hamburger) {
+      navLinks.classList.remove('open');
+    }
   }
 });
 
-// Close mobile menu when a link is clicked
-if (navLinks) {
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-    });
-  });
-}
-
-// ─── Contact Form ───
+// ─── Contact Form ───────────────────────────────────────────────
 function submitForm() {
   const name  = document.getElementById('f-name');
   const email = document.getElementById('f-email');
