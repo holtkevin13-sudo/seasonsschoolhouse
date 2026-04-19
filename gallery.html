@@ -7,6 +7,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <meta property="og:title" content="Gallery — Seasons Schoolhouse" />
+  <meta property="og:description" content="A homeschool enrichment community rooted in experience, nature, and meaningful connection." />
   <meta property="og:image" content="logo.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -1216,78 +1217,309 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   .container { padding: 2.5rem 1.2rem; }
 }
 
+/* ─── NAV — green bottom border ─── */
+nav { border-bottom: 2px solid var(--sage) !important; }
+
+/* ─── NAV — active item underline ─── */
+.nav-links > li > a.active {
+  color: var(--moss);
+  font-weight: 500;
+  position: relative;
+}
+.nav-links > li > a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 2px;
+  background: var(--sage);
+  border-radius: 2px;
+}
+
+/* ─── PILLAR HOVER ─── */
+.pillar {
+  padding: 1.2rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.pillar:hover {
+  border-top: 3px solid var(--sage);
+  box-shadow: 0 4px 18px rgba(62,46,34,0.08);
+  background: var(--white);
+}
+
+/* ─── PAGE HERO GRADIENT ─── */
+.page-hero {
+  background: linear-gradient(160deg, #eef4ec 0%, var(--cream) 60%) !important;
+}
+
+/* ─── HEADING ACCENT LINE ─── */
+.section-heading::after,
+.page-title::after {
+  content: '';
+  display: block;
+  width: 36px; height: 2px;
+  background: var(--tan);
+  margin: 0.7rem auto 0;
+  border-radius: 2px;
+}
+
+/* ─── BUTTONS — slightly thicker border ─── */
+.btn { border-width: 1.5px !important; }
+
+/* ─── FOOTER LINK HOVER UNDERLINE ─── */
+.footer-links a { position: relative; padding-bottom: 2px; }
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--sage-lt);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+.footer-links a:hover::after { transform: scaleX(1); }
+
+/* ─── STORY & VALUE CARD HOVER ─── */
+.story-link-card {
+  border-top: 3px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.story-link-card:hover { border-top-color: var(--sage); }
+
+.value-card {
+  border-top: 3px solid transparent;
+  transition: border-top-color 0.25s, box-shadow 0.25s;
+}
+.value-card:hover {
+  border-top-color: var(--sage);
+  box-shadow: 0 4px 18px rgba(62,46,34,0.08);
+}
+
+/* ─── FOUNDER PHOTO ─── */
+.founder-photo {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--sage-lt);
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+/* ─── DROPDOWN HOVER (desktop) ─── */
 @media (min-width: 769px) {
   .dropdown:hover .dropdown-menu { display: block; }
 }
+
+/* ─── HERO circles off ─── */
 .hero::before, .hero::after { display: none; }
 
-/* Gallery styles */
-.gallery-intro {
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 3rem 2rem 2rem;
-}
-.gallery-intro p { font-size: 1rem; color: var(--bark); line-height: 2; }
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
-  max-width: 1060px;
-  margin: 2rem auto;
-  padding: 0 2rem 4rem;
+/* ─── DROPDOWN HOVER (desktop) ─── */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu { display: block; }
 }
 
-.gallery-item {
-  aspect-ratio: 4/3;
-  background: var(--linen);
-  border-radius: 4px;
-  border: 1px solid var(--linen);
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ─── HERO — remove decorative circles ─── */
+.hero::before, .hero::after { display: none; }
+
+/* ─── NAV — sage green bottom border ─── */
+nav { border-bottom: 2px solid var(--sage) !important; }
+
+/* ─── NAV — active page underline ─── */
+.nav-links > li > a.active {
+  color: var(--moss); font-weight: 500; position: relative;
+}
+.nav-links > li > a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 2px; background: var(--sage); border-radius: 2px;
 }
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* ─── PILLAR SECTION — subtle top border to ease transition ─── */
+.pillars {
+  border-top: 3px solid var(--linen);
+}
+.pillar {
+  padding: 1.2rem; border-radius: 4px;
+  border: 1px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+}
+.pillar:hover {
+  border-top: 3px solid var(--sage);
+  box-shadow: 0 4px 18px rgba(62,46,34,0.08);
+  background: var(--white);
+}
+
+/* ─── PAGE HERO — sage-to-cream gradient ─── */
+.page-hero {
+  background: linear-gradient(160deg, #eef4ec 0%, var(--cream) 60%) !important;
+}
+
+/* ─── HEADING ACCENT LINE — shorter, lighter ─── */
+.section-heading::after,
+.page-title::after {
+  content: '';
   display: block;
-  transition: transform 0.3s ease;
+  width: 24px; height: 2px;
+  background: var(--tan);
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+  opacity: 0.7;
 }
-.gallery-item:hover img { transform: scale(1.03); }
 
+/* ─── BUTTONS — slightly thicker border ─── */
+.btn { border-width: 1.5px !important; }
+
+/* ─── FOOTER LINK HOVER ─── */
+.footer-links a { position: relative; padding-bottom: 2px; }
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px; background: var(--sage-lt);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+.footer-links a:hover::after { transform: scaleX(1); }
+
+/* ─── STORY & VALUE & AREA CARD HOVER ─── */
+.story-link-card {
+  border-top: 3px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.story-link-card:hover { border-top-color: var(--sage); }
+
+.value-card {
+  border-top: 3px solid transparent;
+  transition: border-top-color 0.25s, box-shadow 0.25s;
+}
+.value-card:hover {
+  border-top-color: var(--sage);
+  box-shadow: 0 4px 18px rgba(62,46,34,0.08);
+}
+
+/* ─── VALUES SECTION — linen background wrap ─── */
+.values-section-wrap {
+  background: var(--linen);
+  padding: 1rem 0 3rem;
+}
+
+/* ─── FOUNDER PHOTO ─── */
+.founder-photo {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--sage-lt);
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+/* ─── GALLERY — botanical placeholder pattern ─── */
 .gallery-placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  color: var(--tan);
+  background: repeating-linear-gradient(
+    45deg,
+    var(--linen),
+    var(--linen) 4px,
+    var(--cream) 4px,
+    var(--cream) 20px
+  );
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.6rem; color: var(--tan);
   font-family: 'Jost', sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  font-size: 0.72rem; letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-.gallery-placeholder span { font-size: 1.8rem; }
+.gallery-placeholder span { font-size: 1.8rem; opacity: 0.6; }
 
-.gallery-coming {
+/* ─── HANDBOOK — sticky TOC sidebar (desktop) ─── */
+.handbook-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 3rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+  align-items: start;
+}
+.handbook-toc-sticky {
+  position: sticky;
+  top: 90px;
   background: var(--linen);
   border-radius: 4px;
-  padding: 4rem 2rem;
-  text-align: center;
-  max-width: 560px;
-  margin: 0 auto 4rem;
+  padding: 1.5rem;
 }
-.gallery-coming h3 {
+.handbook-toc-sticky h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem; font-weight: 400;
-  color: var(--moss); margin-bottom: 0.8rem;
+  font-size: 1rem; font-weight: 500;
+  color: var(--moss); margin-bottom: 1rem;
 }
-.gallery-coming p { font-size: 0.88rem; color: var(--brown); line-height: 1.9; }
+.handbook-toc-sticky ol {
+  padding-left: 1.2rem;
+  counter-reset: toc-counter;
+  list-style: none;
+  padding-left: 0;
+}
+.handbook-toc-sticky ol li {
+  font-size: 0.78rem; color: var(--brown);
+  line-height: 1.5; padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(196,168,130,0.2);
+}
+.handbook-toc-sticky ol li:last-child { border-bottom: none; }
+.handbook-toc-sticky ol li a {
+  color: var(--brown); text-decoration: none;
+  transition: color 0.2s;
+}
+.handbook-toc-sticky ol li a:hover { color: var(--sage); }
+
+/* ─── QUOTE ROTATOR ─── */
+.quote-band {
+  position: relative; background: var(--moss);
+  overflow: hidden; padding: 0;
+}
+.quote-slides-wrap { position: relative; }
+.quote-slide {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 4.5rem 2rem 3rem;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  opacity: 0; transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+.quote-slide.active { opacity: 1; pointer-events: auto; position: relative; }
+.quote-slide blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 3vw, 1.85rem);
+  font-weight: 300; font-style: italic;
+  color: var(--cream); max-width: 720px;
+  line-height: 1.65; margin: 0 auto 1.2rem;
+}
+.quote-slide cite {
+  font-family: 'Jost', sans-serif; font-style: normal;
+  font-size: 0.7rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--sage-lt);
+}
+.quote-dots {
+  display: flex; justify-content: center;
+  gap: 0.55rem; padding: 0 0 1.8rem;
+  background: var(--moss);
+}
+.quote-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--sage-lt); opacity: 0.35;
+  transition: opacity 0.4s; cursor: pointer;
+  border: none; padding: 0; display: block;
+}
+.quote-dot.active { opacity: 1; background: var(--cream); }
+
+@media (max-width: 768px) {
+  .handbook-layout { grid-template-columns: 1fr; }
+  .handbook-toc-sticky { position: static; }
+}
 </style>
 </head>
 <body>
@@ -1302,16 +1534,17 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li class="dropdown">
-      <button onclick="toggleDropdown('about-dd', event)">About &#9662;</button>
+      <button onclick="toggleDropdown('about-dd',event)">About &#9662;</button>
       <ul class="dropdown-menu" id="about-dd">
         <li><a href="about.html">Our Story</a></li>
         <li><a href="values.html">Our Values</a></li>
         <li><a href="program.html">Our Program</a></li>
+        <li><a href="expect.html">What to Expect</a></li>
         <li><a href="gallery.html" class="active">Gallery</a></li>
       </ul>
     </li>
     <li class="dropdown">
-      <button onclick="toggleDropdown('resources-dd', event)">Resources &#9662;</button>
+      <button onclick="toggleDropdown('resources-dd',event)">Resources &#9662;</button>
       <ul class="dropdown-menu" id="resources-dd">
         <li><a href="apply.html">Apply</a></li>
         <li><a href="handbook.html">Parent Handbook</a></li>
@@ -1330,46 +1563,16 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   </div>
 
   <div class="gallery-intro">
-    <p>Every image here tells a small part of a larger story &mdash; a community of families choosing to learn, explore, and grow together with intention. No faces of children are shared publicly, in keeping with our commitment to privacy.</p>
+    <p>Every image here tells a small part of a larger story &mdash; a community of families choosing to learn, explore, and grow together with intention. In keeping with our commitment to privacy, no faces of children are shared publicly.</p>
   </div>
 
-  <!-- Gallery grid — images drop in here -->
   <div class="gallery-grid" id="gallery-grid">
-
-    <!-- Placeholder tiles — replace with real images as they come in -->
-    <!-- To add an image: <div class="gallery-item"><img src="your-image.jpg" alt="description" /></div> -->
-
-    <div class="gallery-item">
-      <div class="gallery-placeholder"><span>🌿</span>Photo Coming Soon</div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder"><span>🛠️</span>Photo Coming Soon</div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder"><span>🌳</span>Photo Coming Soon</div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder"><span>🎨</span>Photo Coming Soon</div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder"><span>🚌</span>Photo Coming Soon</div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder"><span>🍂</span>Photo Coming Soon</div>
-    </div>
-
-  </div>
-
-  <div style="max-width:860px;margin:0 auto;padding:0 2rem;">
-    <div class="gallery-coming">
-      <h3>Photos Are on the Way</h3>
-      <p>We are gathering photos from our gatherings and field trips &mdash; nature shots, project close-ups, seasonal details, and the beauty of learning in action. Check back soon as this gallery fills in with the story of our year.</p>
-    </div>
-  </div>
-
-  <div style="background:var(--linen);padding:3rem 2rem;text-align:center;">
-    <p class="page-label">How to Add Images</p>
-    <p style="font-size:0.84rem;color:var(--brown);max-width:560px;margin:0 auto 1.5rem;line-height:1.9;">Upload image files to your GitHub repo, then replace each placeholder tile in <strong style="font-weight:500;">gallery.html</strong> with:<br><code style="background:var(--white);padding:0.2rem 0.5rem;border-radius:2px;font-size:0.8rem;">&lt;div class="gallery-item"&gt;&lt;img src="your-photo.jpg" alt="description" /&gt;&lt;/div&gt;</code></p>
+    <div class="gallery-item"><div class="gallery-placeholder"><span>🌿</span>Coming Soon</div></div>
+    <div class="gallery-item"><div class="gallery-placeholder"><span>🛠️</span>Coming Soon</div></div>
+    <div class="gallery-item"><div class="gallery-placeholder"><span>🌳</span>Coming Soon</div></div>
+    <div class="gallery-item"><div class="gallery-placeholder"><span>🎨</span>Coming Soon</div></div>
+    <div class="gallery-item"><div class="gallery-placeholder"><span>🚌</span>Coming Soon</div></div>
+    <div class="gallery-item"><div class="gallery-placeholder"><span>🍂</span>Coming Soon</div></div>
   </div>
 
   <footer>
@@ -1381,11 +1584,12 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
       <a href="about.html">Our Story</a>
       <a href="values.html">Our Values</a>
       <a href="program.html">Our Program</a>
+      <a href="expect.html">What to Expect</a>
       <a href="gallery.html">Gallery</a>
       <a href="apply.html">Apply</a>
       <a href="contact.html">Contact</a>
     </div>
-    <p>&copy; 2025 &middot; Seasons Schoolhouse &middot; Flagler County, FL &middot; myseasonsschoolhouse@gmail.com</p>
+    <p>&copy; 2024 &middot; Seasons Schoolhouse &middot; Flagler County, FL &middot; myseasonsschoolhouse@gmail.com</p>
   </footer>
 </div>
 <script src="script.js"></script>
