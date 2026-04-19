@@ -7,6 +7,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <meta property="og:title" content="Seasons Schoolhouse" />
+  <meta property="og:description" content="A homeschool enrichment community rooted in experience, nature, and meaningful connection. Flagler County, FL." />
   <meta property="og:image" content="logo.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -1220,9 +1221,74 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   .dropdown:hover .dropdown-menu { display: block; }
 }
 .hero::before, .hero::after { display: none; }
+
+/* ─── QUOTE ROTATOR ─── */
+.quote-band { position: relative; min-height: 200px; padding: 4.5rem 2rem; display: flex; align-items: center; justify-content: center; background: var(--moss); overflow: hidden; }
+
+.quote-slide {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  text-align: center;
+  pointer-events: none;
+}
+
+.quote-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.quote-slide blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.25rem, 3vw, 1.9rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--cream);
+  max-width: 720px;
+  line-height: 1.6;
+  margin: 0 auto 1.2rem;
+}
+
+.quote-slide cite {
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage-lt);
+}
+
+.quote-dots {
+  position: absolute;
+  bottom: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.quote-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--sage-lt);
+  opacity: 0.35;
+  transition: opacity 0.4s;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+.quote-dot.active { opacity: 1; background: var(--cream); }
 </style>
 </head>
 <body>
+
 <nav>
   <a class="nav-logo" href="index.html">
     <img src="logo.png" alt="Seasons Schoolhouse" />
@@ -1254,13 +1320,15 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
+
 <div class="page-wrapper">
+
   <div class="hero">
     <img class="hero-logo" src="logo.png" alt="Seasons Schoolhouse" />
     <p class="hero-eyebrow">Homeschool Enrichment Program &middot; Est. 2024 &middot; Flagler County, FL</p>
     <h1 class="hero-title">Seasons<br><em>Schoolhouse</em></h1>
-    <p class="hero-subtitle">A place to gather, explore, and grow — together.</p>
-    <p class="hero-tagline">A bi-weekly enrichment program for homeschool families in Flagler County. We are not a school. We are a community — built on shared values, real experiences, and the steady rhythm of showing up for one another.</p>
+    <p class="hero-subtitle">A place to gather, explore, and grow &mdash; together.</p>
+    <p class="hero-tagline">A bi-weekly enrichment program for homeschool families in Flagler County. We are not a school. We are a community &mdash; built on shared values, real experiences, and the steady rhythm of showing up for one another.</p>
     <div class="hero-btns">
       <a class="btn btn-solid" href="about.html">Our Story</a>
       <a class="btn" href="apply.html">Join Our Community</a>
@@ -1269,16 +1337,43 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
 
   <div class="pillars">
     <div class="pillar"><span class="pillar-icon">🌿</span><h3>Nature Study</h3><p>Learning outdoors, observing seasons, and developing a deep respect for the natural world.</p></div>
-    <div class="pillar"><span class="pillar-icon">🔬</span><h3>Science & STEAM</h3><p>Hands-on exploration that brings concepts to life through doing, building, and discovering.</p></div>
-    <div class="pillar"><span class="pillar-icon">📜</span><h3>History & Social Studies</h3><p>Connecting children to the stories, people, and places that shaped the world around them.</p></div>
-    <div class="pillar"><span class="pillar-icon">🎨</span><h3>Art & Creativity</h3><p>Making by hand — crafts, projects, and creative expression woven through every season.</p></div>
-    <div class="pillar"><span class="pillar-icon">🚌</span><h3>Field Trips</h3><p>Taking learning into the community — intentional, theme-connected adventures throughout Flagler County and beyond.</p></div>
+    <div class="pillar"><span class="pillar-icon">🔬</span><h3>Science &amp; STEAM</h3><p>Hands-on exploration that brings concepts to life through doing, building, and discovering.</p></div>
+    <div class="pillar"><span class="pillar-icon">📜</span><h3>History &amp; Social Studies</h3><p>Connecting children to the stories, people, and places that shaped the world around them.</p></div>
+    <div class="pillar"><span class="pillar-icon">🎨</span><h3>Art &amp; Creativity</h3><p>Making by hand &mdash; crafts, projects, and creative expression woven through every season.</p></div>
+    <div class="pillar"><span class="pillar-icon">🚌</span><h3>Field Trips</h3><p>Intentional, theme-connected adventures throughout Flagler County and beyond.</p></div>
     <div class="pillar"><span class="pillar-icon">🤝</span><h3>Community</h3><p>Parents present, children known, families building something real alongside one another.</p></div>
   </div>
 
-  <div class="quote-band">
-    <blockquote>"We gather not just to learn together, but to grow together — through experiences, conversations, field trips, nature, and the steady rhythm of showing up for one another."</blockquote>
-    <cite>&mdash; Danyelle Holt, Founder</cite>
+  <!-- ── ROTATING QUOTES ── -->
+  <div class="quote-band" id="quote-band">
+
+    <div class="quote-slide active">
+      <blockquote>&ldquo;Tell me and I forget. Teach me and I remember. Involve me and I learn.&rdquo;</blockquote>
+      <cite>&mdash; Benjamin Franklin</cite>
+    </div>
+
+    <div class="quote-slide">
+      <blockquote>&ldquo;I am not afraid of storms, for I am learning how to sail my ship.&rdquo;</blockquote>
+      <cite>&mdash; Louisa May Alcott</cite>
+    </div>
+
+    <div class="quote-slide">
+      <blockquote>&ldquo;Education is an atmosphere, a discipline, a life.&rdquo;</blockquote>
+      <cite>&mdash; Charlotte Mason</cite>
+    </div>
+
+    <div class="quote-slide">
+      <blockquote>&ldquo;In every walk with nature, one receives far more than he seeks.&rdquo;</blockquote>
+      <cite>&mdash; John Muir</cite>
+    </div>
+
+    <div class="quote-dots" id="quote-dots">
+      <button class="quote-dot active" onclick="goToQuote(0)"></button>
+      <button class="quote-dot" onclick="goToQuote(1)"></button>
+      <button class="quote-dot" onclick="goToQuote(2)"></button>
+      <button class="quote-dot" onclick="goToQuote(3)"></button>
+    </div>
+
   </div>
 
   <footer>
@@ -1296,7 +1391,37 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
     </div>
     <p>&copy; 2025 &middot; Seasons Schoolhouse &middot; Flagler County, FL &middot; myseasonsschoolhouse@gmail.com</p>
   </footer>
+
 </div>
+
 <script src="script.js"></script>
+<script>
+  // ── Quote rotator ──
+  const slides = document.querySelectorAll('.quote-slide');
+  const dots   = document.querySelectorAll('.quote-dot');
+  let current  = 0;
+  let timer;
+
+  function goToQuote(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    resetTimer();
+  }
+
+  function nextQuote() {
+    goToQuote((current + 1) % slides.length);
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(nextQuote, 6500);
+  }
+
+  // Start — 6.5 seconds per quote, 1.2s fade
+  timer = setInterval(nextQuote, 6500);
+</script>
 </body>
 </html>
