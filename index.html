@@ -7,14 +7,11 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <meta property="og:title" content="Seasons Schoolhouse" />
-  <meta property="og:description" content="A K–8 homeschool enrichment co-op rooted in community, nature, life skills, and hands-on learning in Flagler County." />
   <meta property="og:image" content="logo.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-/* ─── RESET & VARIABLES ─── */
+  <style>/* ─── RESET & VARIABLES ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -1219,13 +1216,16 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   .container { padding: 2.5rem 1.2rem; }
 }
 
-  </style>
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu { display: block; }
+}
+.hero::before, .hero::after { display: none; }
+</style>
 </head>
 <body>
-
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="logo.png" alt="Seasons Schoolhouse Logo" />
+    <img src="logo.png" alt="Seasons Schoolhouse" />
     <div class="nav-logo-text">Seasons Schoolhouse<span>Learning Through Every Season</span></div>
   </a>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -1234,15 +1234,16 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   <ul class="nav-links" id="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
     <li class="dropdown">
-      <button onclick="toggleDropdown('about-dd', event)">About ▾</button>
+      <button onclick="toggleDropdown('about-dd', event)">About &#9662;</button>
       <ul class="dropdown-menu" id="about-dd">
         <li><a href="about.html">Our Story</a></li>
         <li><a href="values.html">Our Values</a></li>
         <li><a href="program.html">Our Program</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
       </ul>
     </li>
     <li class="dropdown">
-      <button onclick="toggleDropdown('resources-dd', event)">Resources ▾</button>
+      <button onclick="toggleDropdown('resources-dd', event)">Resources &#9662;</button>
       <ul class="dropdown-menu" id="resources-dd">
         <li><a href="apply.html">Apply</a></li>
         <li><a href="handbook.html">Parent Handbook</a></li>
@@ -1253,15 +1254,13 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
-
 <div class="page-wrapper">
-
   <div class="hero">
     <img class="hero-logo" src="logo.png" alt="Seasons Schoolhouse" />
-    <p class="hero-eyebrow">K–8 Homeschool Enrichment · Est. 2024 · Flagler County</p>
+    <p class="hero-eyebrow">Homeschool Enrichment Program &middot; Est. 2024 &middot; Flagler County, FL</p>
     <h1 class="hero-title">Seasons<br><em>Schoolhouse</em></h1>
-    <p class="hero-subtitle">Rooted in community. Grown through experience.</p>
-    <p class="hero-tagline">A warm, hands-on co-op where homeschool families gather each season to explore life skills, nature, history, and creativity — together.</p>
+    <p class="hero-subtitle">A place to gather, explore, and grow — together.</p>
+    <p class="hero-tagline">A bi-weekly enrichment program for homeschool families in Flagler County. We are not a school. We are a community — built on shared values, real experiences, and the steady rhythm of showing up for one another.</p>
     <div class="hero-btns">
       <a class="btn btn-solid" href="about.html">Our Story</a>
       <a class="btn" href="apply.html">Join Our Community</a>
@@ -1269,17 +1268,17 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   </div>
 
   <div class="pillars">
-    <div class="pillar"><span class="pillar-icon">🌿</span><h3>Nature Study</h3><p>Learning that begins outdoors and roots itself in the living world around us.</p></div>
-    <div class="pillar"><span class="pillar-icon">🧵</span><h3>Life Skills</h3><p>Cooking, sewing, gardening — practical wisdom passed down with intention.</p></div>
-    <div class="pillar"><span class="pillar-icon">📜</span><h3>History & Humanities</h3><p>Stories that connect children to the world they've inherited and the one they'll shape.</p></div>
-    <div class="pillar"><span class="pillar-icon">🎨</span><h3>Art & Creativity</h3><p>Making things by hand, expressing ideas, and discovering what imagination can build.</p></div>
-    <div class="pillar"><span class="pillar-icon">🚌</span><h3>Field Trips</h3><p>Learning beyond four walls — local adventures that bring lessons to life.</p></div>
-    <div class="pillar"><span class="pillar-icon">🤝</span><h3>Community</h3><p>A circle of families walking the homeschool path together, season by season.</p></div>
+    <div class="pillar"><span class="pillar-icon">🌿</span><h3>Nature Study</h3><p>Learning outdoors, observing seasons, and developing a deep respect for the natural world.</p></div>
+    <div class="pillar"><span class="pillar-icon">🔬</span><h3>Science & STEAM</h3><p>Hands-on exploration that brings concepts to life through doing, building, and discovering.</p></div>
+    <div class="pillar"><span class="pillar-icon">📜</span><h3>History & Social Studies</h3><p>Connecting children to the stories, people, and places that shaped the world around them.</p></div>
+    <div class="pillar"><span class="pillar-icon">🎨</span><h3>Art & Creativity</h3><p>Making by hand — crafts, projects, and creative expression woven through every season.</p></div>
+    <div class="pillar"><span class="pillar-icon">🚌</span><h3>Field Trips</h3><p>Taking learning into the community — intentional, theme-connected adventures throughout Flagler County and beyond.</p></div>
+    <div class="pillar"><span class="pillar-icon">🤝</span><h3>Community</h3><p>Parents present, children known, families building something real alongside one another.</p></div>
   </div>
 
   <div class="quote-band">
-    <blockquote>"Tell me and I forget. Teach me and I remember. Involve me and I learn."</blockquote>
-    <cite>— Benjamin Franklin</cite>
+    <blockquote>"We gather not just to learn together, but to grow together — through experiences, conversations, field trips, nature, and the steady rhythm of showing up for one another."</blockquote>
+    <cite>&mdash; Danyelle Holt, Founder</cite>
   </div>
 
   <footer>
@@ -1291,14 +1290,13 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
       <a href="about.html">Our Story</a>
       <a href="values.html">Our Values</a>
       <a href="program.html">Our Program</a>
+      <a href="gallery.html">Gallery</a>
       <a href="apply.html">Apply</a>
       <a href="contact.html">Contact</a>
     </div>
-    <p>© 2025 · Danyelle Holt · Flagler County, FL · seasonsschoolhouse@gmail.com</p>
+    <p>&copy; 2025 &middot; Seasons Schoolhouse &middot; Flagler County, FL &middot; myseasonsschoolhouse@gmail.com</p>
   </footer>
-
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>
