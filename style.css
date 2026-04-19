@@ -1202,3 +1202,117 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   .page-title { font-size: 2rem; }
   .container { padding: 2.5rem 1.2rem; }
 }
+
+/* ─── NAV — green bottom border ─── */
+nav { border-bottom: 2px solid var(--sage) !important; }
+
+/* ─── NAV — active item underline ─── */
+.nav-links > li > a.active {
+  color: var(--moss);
+  font-weight: 500;
+  position: relative;
+}
+.nav-links > li > a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 2px;
+  background: var(--sage);
+  border-radius: 2px;
+}
+
+/* ─── PILLAR HOVER ─── */
+.pillar {
+  padding: 1.2rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.pillar:hover {
+  border-top: 3px solid var(--sage);
+  box-shadow: 0 4px 18px rgba(62,46,34,0.08);
+  background: var(--white);
+}
+
+/* ─── PAGE HERO GRADIENT ─── */
+.page-hero {
+  background: linear-gradient(160deg, #eef4ec 0%, var(--cream) 60%) !important;
+}
+
+/* ─── HEADING ACCENT LINE ─── */
+.section-heading::after,
+.page-title::after {
+  content: '';
+  display: block;
+  width: 36px; height: 2px;
+  background: var(--tan);
+  margin: 0.7rem auto 0;
+  border-radius: 2px;
+}
+
+/* ─── BUTTONS — slightly thicker border ─── */
+.btn { border-width: 1.5px !important; }
+
+/* ─── FOOTER LINK HOVER UNDERLINE ─── */
+.footer-links a { position: relative; padding-bottom: 2px; }
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--sage-lt);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+.footer-links a:hover::after { transform: scaleX(1); }
+
+/* ─── STORY & VALUE CARD HOVER ─── */
+.story-link-card {
+  border-top: 3px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.story-link-card:hover { border-top-color: var(--sage); }
+
+.value-card {
+  border-top: 3px solid transparent;
+  transition: border-top-color 0.25s, box-shadow 0.25s;
+}
+.value-card:hover {
+  border-top-color: var(--sage);
+  box-shadow: 0 4px 18px rgba(62,46,34,0.08);
+}
+
+/* ─── FOUNDER PHOTO ─── */
+.founder-photo {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--sage-lt);
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+/* ─── DROPDOWN HOVER (desktop) ─── */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu { display: block; }
+}
+
+/* ─── HERO circles off ─── */
+.hero::before, .hero::after { display: none; }
+
+/* ─── DROPDOWN GAP FIX — bridge between button and menu ─── */
+.dropdown-menu {
+  top: calc(100% + 2px) !important;
+  margin-top: 0 !important;
+}
+
+/* Invisible bridge fills gap so hover doesn't break */
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  z-index: 499;
+}
