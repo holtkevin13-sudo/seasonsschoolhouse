@@ -8,9 +8,10 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <meta property="og:title" content="Our Program — Seasons Schoolhouse" />
   <meta property="og:image" content="logo.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-/* ─── RESET & VARIABLES ─── */
+  <style>/* ─── RESET & VARIABLES ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -1215,13 +1216,16 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   .container { padding: 2.5rem 1.2rem; }
 }
 
-  </style>
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu { display: block; }
+}
+.hero::before, .hero::after { display: none; }
+</style>
 </head>
 <body>
-
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="logo.png" alt="Seasons Schoolhouse Logo" />
+    <img src="logo.png" alt="Seasons Schoolhouse" />
     <div class="nav-logo-text">Seasons Schoolhouse<span>Learning Through Every Season</span></div>
   </a>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -1230,15 +1234,16 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
   <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li class="dropdown">
-      <button onclick="toggleDropdown('about-dd', event)">About ▾</button>
+      <button onclick="toggleDropdown('about-dd', event)">About &#9662;</button>
       <ul class="dropdown-menu" id="about-dd">
         <li><a href="about.html">Our Story</a></li>
         <li><a href="values.html">Our Values</a></li>
         <li><a href="program.html" class="active">Our Program</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
       </ul>
     </li>
     <li class="dropdown">
-      <button onclick="toggleDropdown('resources-dd', event)">Resources ▾</button>
+      <button onclick="toggleDropdown('resources-dd', event)">Resources &#9662;</button>
       <ul class="dropdown-menu" id="resources-dd">
         <li><a href="apply.html">Apply</a></li>
         <li><a href="handbook.html">Parent Handbook</a></li>
@@ -1249,58 +1254,115 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
-
 <div class="page-wrapper">
-
   <div class="page-hero">
     <p class="page-label">What We Do</p>
     <h1 class="page-title">Our <em>Program</em></h1>
-    <p class="page-subtitle">A look at how Seasons Schoolhouse gatherings are structured, what we explore together, and what a typical day looks like for your family.</p>
+    <p class="page-subtitle">Built around consistent gatherings, a guiding yearly theme, and real-world experiences that bring learning to life.</p>
   </div>
 
   <div class="program-intro">
-    <p>Seasons Schoolhouse is a K–8 enrichment co-op, not a school. We don't replace your homeschool — we enrich it. Our bi-weekly gatherings are designed to be full, meaningful days of shared learning that complement whatever approach your family uses at home.</p>
+    <p>Seasons Schoolhouse is a bi-weekly homeschool enrichment program for children in 3rd&ndash;8th grade. We are not a core academic program &mdash; we do not teach formal math or language arts. Instead, we focus on enrichment through nature study, science, social studies, history, and community-based learning through a hands-on, STEAM-informed approach.</p>
   </div>
 
+  <!-- What We Are -->
   <div class="program-section">
-    <h3>How We're Structured</h3>
+    <h3>A Community, Not a Classroom</h3>
     <div class="divider"></div>
-    <p>We meet bi-weekly throughout the school year, from September through May, right here in Flagler County. Each gathering is a full day of intentional activity — not a drop-off program, but a community event where parents are present and participating alongside their children.</p>
-    <p>Our year is divided into seasonal themes. Each season brings its own focus, its own palette of activities, and its own rhythm. We let the natural calendar guide us — what we plant in spring, we harvest in fall. What we create in winter, we celebrate by year's end.</p>
+    <p>Seasons Schoolhouse is designed to complement homeschool learning at home &mdash; not replace it. Parents remain on-site and involved throughout every gathering. This is not a drop-off program. It is a shared learning environment where families grow alongside one another, and where children are known, not just present.</p>
+    <p>We gather bi-weekly throughout the school year, from September through May, with a Kick-off gathering in August and an End of Year Celebration in May. All meetings and field trips are held in Flagler County, with occasional educational field trips beyond county lines.</p>
   </div>
 
   <hr class="program-divider" />
 
+  <!-- Yearly Theme -->
   <div class="program-section">
-    <h3>Who We Serve</h3>
+    <h3>One Theme. All Year.</h3>
     <div class="divider"></div>
-    <p>Seasons Schoolhouse is open to homeschool families with children in kindergarten through 8th grade. All learning styles and backgrounds are welcome — whether your family follows a classical approach, Charlotte Mason, eclectic, or something entirely your own, our enrichment gatherings are designed to complement any method.</p>
-    <p>We do ask that all families review <a href="values.html" style="color:var(--sage);">Our Values</a> before applying, as we are intentionally building a community of families who share a common vision for their children's education.</p>
+    <p>Each year, Seasons Schoolhouse chooses a central theme that shapes everything we do. Field trips, discussions, hands-on activities, and projects all connect back to this theme &mdash; allowing children to build understanding over time rather than in isolated lessons. This is what we mean by rhythm over rush.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2rem;">
+      <div style="background:var(--moss);border-radius:4px;padding:1.6rem;color:var(--cream);">
+        <p style="font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage-lt);margin-bottom:0.4rem;">Current Year</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;">Florida Ecosystems &amp; History</p>
+        <p style="font-size:0.82rem;margin-top:0.5rem;opacity:0.85;line-height:1.7;">Exploring the natural landscapes, wildlife, and rich history of our home state &mdash; from Indigenous Floridians to coastal ecosystems.</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--linen);border-radius:4px;padding:1.6rem;">
+        <p style="font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin-bottom:0.4rem;">Past Themes</p>
+        <ul style="list-style:none;padding:0;">
+          <li style="font-size:0.88rem;color:var(--brown);padding:0.35rem 0;border-bottom:1px solid var(--linen);">&#127807; Life Skills</li>
+          <li style="font-size:0.88rem;color:var(--brown);padding:0.35rem 0;border-bottom:1px solid var(--linen);">&#127794; Survival Skills</li>
+          <li style="font-size:0.88rem;color:var(--brown);padding:0.35rem 0;">&#127968; Community Exploration</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <hr class="program-divider" />
 
+  <!-- Meeting Structure -->
   <div class="program-section">
-    <h3>Areas of Exploration</h3>
+    <h3>How a Gathering Works</h3>
     <div class="divider"></div>
-    <p>Rather than a fixed curriculum, we guide our gatherings around rich areas of exploration — topics and skills that have real-world depth and seasonal connection. These are the threads that weave through every year at Seasons Schoolhouse.</p>
+    <p>Our meetings follow a steady, intentional rhythm. Every gathering is purposefully planned &mdash; not busy for the sake of busyness, but full of meaningful experience.</p>
   </div>
 
-  <div class="areas-grid">
-    <div class="area-card"><span class="icon">🌿</span><div><h4>Nature Study</h4><p>Seasonal observation, plant identification, wildlife exploration, nature journaling, and outdoor stewardship of our local Flagler County environment.</p></div></div>
-    <div class="area-card"><span class="icon">🧵</span><div><h4>Life Skills</h4><p>Cooking from scratch, basic sewing, gardening, food preservation, and the practical arts of everyday living passed down with intention.</p></div></div>
-    <div class="area-card"><span class="icon">📜</span><div><h4>History & Humanities</h4><p>Living history lessons, storytelling, cultural studies, and meaningful connections to the past — bringing history off the page and into the hands of children.</p></div></div>
-    <div class="area-card"><span class="icon">🎨</span><div><h4>Art & Creative Expression</h4><p>Watercolor, nature printing, seasonal crafts, handicrafts, and creative projects made with care and intention — no kits, no shortcuts.</p></div></div>
-    <div class="area-card"><span class="icon">🚌</span><div><h4>Field Trips</h4><p>Local adventures throughout Flagler County, with occasional educational trips beyond. Farms, nature preserves, historical sites, museums, and more.</p></div></div>
-    <div class="area-card"><span class="icon">🤝</span><div><h4>Community Service</h4><p>Teaching children to look outward — to see a need and respond. Service projects are woven into our year so giving back becomes second nature.</p></div></div>
+  <div style="max-width:860px;margin:0 auto 2rem;padding:0 2rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;">
+      <div class="area-card">
+        <span class="icon">🎓</span>
+        <div>
+          <h4>Structured Teaching Time</h4>
+          <p>We begin with an intentional introduction to the day&rsquo;s topic &mdash; connecting it to our yearly theme and building context before we dive in.</p>
+        </div>
+      </div>
+      <div class="area-card">
+        <span class="icon">🛠️</span>
+        <div>
+          <h4>Hands-On Activity</h4>
+          <p>Students engage with what they&rsquo;ve learned in a tangible, real way &mdash; building, creating, experimenting, or exploring together.</p>
+        </div>
+      </div>
+      <div class="area-card">
+        <span class="icon">🌳</span>
+        <div>
+          <h4>Free Play &amp; Social Time</h4>
+          <p>Children explore, play, and connect &mdash; often outdoors when possible. This time is not an afterthought. It is part of the program.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="program-divider" />
+
+  <!-- Field Trips -->
+  <div class="program-section">
+    <h3>Field Trips</h3>
+    <div class="divider"></div>
+    <p>On field trip days, we take our learning into the community. These experiences are intentionally chosen to align with our yearly theme and give students the chance to see concepts in real life &mdash; not just read about them.</p>
+    <p>For example, a study of Indigenous Floridians may be paired with a visit to the Timucuan Ecological and Historic Preserve &mdash; bringing history and ecology together in a meaningful, memorable way. This is learning that sticks.</p>
+    <p style="font-size:0.86rem;color:var(--tan);font-style:italic;">All field trips take place within Flagler County, with occasional educational excursions beyond county lines.</p>
+  </div>
+
+  <!-- Areas of exploration -->
+  <div class="activities-section">
+    <h2 class="section-heading">Areas of <em>Exploration</em></h2>
+    <p class="section-label">What we study and experience together</p>
+    <div class="areas-grid">
+      <div class="area-card"><span class="icon">🌿</span><div><h4>Nature Study</h4><p>Seasonal observation, plant and wildlife identification, nature journaling, and stewardship of our local Flagler County environment.</p></div></div>
+      <div class="area-card"><span class="icon">🔬</span><div><h4>Science &amp; STEAM</h4><p>Hands-on exploration, experimentation, and discovery &mdash; learning through doing, not just reading.</p></div></div>
+      <div class="area-card"><span class="icon">📜</span><div><h4>History &amp; Social Studies</h4><p>Living history lessons, cultural studies, and meaningful connections to the people and stories that shaped our world.</p></div></div>
+      <div class="area-card"><span class="icon">🎨</span><div><h4>Art &amp; Creative Expression</h4><p>Seasonal crafts, nature-inspired art, and creative projects made with care and intention &mdash; no kits, no shortcuts.</p></div></div>
+      <div class="area-card"><span class="icon">🚌</span><div><h4>Field Trips</h4><p>Theme-connected adventures throughout Flagler County and occasionally beyond &mdash; bringing learning off the page and into the world.</p></div></div>
+      <div class="area-card"><span class="icon">🤝</span><div><h4>Community Exploration</h4><p>Learning to look outward &mdash; understanding our community, serving others, and discovering our place in the world around us.</p></div></div>
+    </div>
   </div>
 
   <div class="program-strip">
-    <div style="max-width:720px; margin:0 auto; text-align:center;">
-      <h2 class="section-heading" style="margin-bottom:0.5rem;">A Note on <em>Enrichment</em></h2>
-      <p class="section-label" style="margin-bottom:1.5rem;">What we are — and what we're not</p>
-      <p style="font-size:0.92rem; color:var(--brown); line-height:2; max-width:580px; margin:0 auto 2rem;">We are not a school. We do not issue grades, assign homework, or dictate how your family homeschools. We are a complement — a gathering place where children experience the richness of learning together, and where families find community and shared purpose. What happens at Seasons Schoolhouse stays in the hands and hearts of your children long after the day ends.</p>
-      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+    <div style="max-width:680px;margin:0 auto;text-align:center;">
+      <h2 class="section-heading">Ready to Be <em>Part of It?</em></h2>
+      <p style="font-size:0.92rem;color:var(--brown);line-height:2;max-width:560px;margin:1rem auto 2rem;">Seasons Schoolhouse is more than a program. It is a community of families choosing to do life and learning together &mdash; steadily, intentionally, and with purpose.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
         <a class="btn btn-solid" href="apply.html">Apply to Join</a>
         <a class="btn" href="calendar.html">View Our Calendar</a>
       </div>
@@ -1316,12 +1378,12 @@ footer p { font-size: 0.7rem; letter-spacing: 0.08em; opacity: 0.42; }
       <a href="about.html">Our Story</a>
       <a href="values.html">Our Values</a>
       <a href="program.html">Our Program</a>
+      <a href="gallery.html">Gallery</a>
       <a href="apply.html">Apply</a>
       <a href="contact.html">Contact</a>
     </div>
-    <p>© 2025 · Danyelle Holt · Flagler County, FL · seasonsschoolhouse@gmail.com</p>
+    <p>&copy; 2025 &middot; Seasons Schoolhouse &middot; Flagler County, FL &middot; myseasonsschoolhouse@gmail.com</p>
   </footer>
-
 </div>
 <script src="script.js"></script>
 </body>
