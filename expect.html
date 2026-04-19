@@ -1521,107 +1521,110 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   .handbook-toc-sticky { position: static; }
 }
 
+@media (min-width: 769px) {
+  .dropdown:hover > .dropdown-menu { display: block; }
+  .dropdown-menu { top: 100% !important; padding-top: 8px !important; margin-top: 0 !important; }
+  .dropdown::after { content: ''; position: absolute; top: 100%; left: -10px; right: -10px; height: 10px; z-index: 499; }
+}
+@media (max-width: 768px) {
+  .dropdown-menu { display: none; }
+  .dropdown-menu.open { display: block; position: static; transform: none; box-shadow: none; border: none; padding-left: 1rem; margin-top: 0; }
+}
+.hero::before, .hero::after { display: none; }
 
-/* ─── EXPECT PAGE SPECIFIC ─── */
 .expect-intro {
   max-width: 680px;
   margin: 0 auto;
+  padding: 3rem 2rem 1rem;
   text-align: center;
-  padding: 3.5rem 2rem 1rem;
 }
 .expect-intro p {
   font-size: 1rem;
   color: var(--bark);
   line-height: 2;
 }
-
 .expect-sections {
   max-width: 780px;
   margin: 0 auto;
-  padding: 2rem 2rem 4rem;
+  padding: 1rem 2rem 4rem;
 }
-
 .expect-section {
-  padding: 2.5rem 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1.8rem;
+  padding: 2rem 0;
   border-bottom: 1px solid var(--linen);
-  display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: 1.5rem;
-  align-items: start;
+  align-items: flex-start;
 }
 .expect-section:last-child { border-bottom: none; }
-
 .expect-icon {
-  width: 48px; height: 48px;
-  background: var(--linen);
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  background: var(--linen);
+  border: 1px solid rgba(196,168,130,0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
-  flex-shrink: 0;
-  margin-top: 0.2rem;
-  border: 1px solid rgba(196,168,130,0.3);
+  margin-top: 0.15rem;
 }
-
-.expect-section h3 {
+.expect-content { flex: 1; min-width: 0; }
+.expect-content h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 400;
   color: var(--moss);
   margin-bottom: 0.6rem;
 }
-
-.expect-section p {
+.expect-content p {
   font-size: 0.92rem;
   color: var(--bark);
   line-height: 2;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
 }
-.expect-section p:last-child { margin-bottom: 0; }
-
+.expect-content p:last-child { margin-bottom: 0; }
 .time-badge {
   display: inline-block;
   background: var(--moss);
   color: var(--cream);
   font-family: 'Jost', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0.3rem 0.9rem;
+  padding: 0.25rem 0.9rem;
   border-radius: 30px;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
 }
-
 .notice-list {
   list-style: none;
   padding: 0;
-  margin: 1rem 0 0;
+  margin: 0.8rem 0 0;
 }
 .notice-list li {
   font-size: 0.92rem;
   color: var(--bark);
-  line-height: 1.8;
-  padding: 0.5rem 0 0.5rem 1.5rem;
+  line-height: 1.85;
+  padding: 0.45rem 0 0.45rem 1.5rem;
   border-bottom: 1px solid var(--linen);
   position: relative;
 }
 .notice-list li:last-child { border-bottom: none; }
 .notice-list li::before {
-  content: '&#10003;';
+  content: '✓';
   position: absolute;
   left: 0;
   color: var(--sage);
-  font-size: 0.85rem;
-  top: 0.55rem;
+  font-size: 0.82rem;
+  top: 0.5rem;
 }
-
 .final-note {
   background: var(--linen);
   border-left: 3px solid var(--sage);
   border-radius: 0 4px 4px 0;
-  padding: 1.5rem 1.8rem;
-  margin-top: 1rem;
+  padding: 1.2rem 1.6rem;
+  margin-top: 0.8rem;
 }
 .final-note p {
   font-family: 'Cormorant Garamond', serif;
@@ -1631,62 +1634,10 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   line-height: 1.85;
   margin: 0;
 }
-
 @media (max-width: 560px) {
-  .expect-section {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
+  .expect-section { flex-direction: column; gap: 0.8rem; }
+  .expect-icon { width: 42px; height: 42px; font-size: 1.1rem; }
 }
-  
-
-.dropdown-menu {
-  top: calc(100% + 2px) !important;
-  margin-top: 0 !important;
-}
-
-/* Invisible bridge fills gap so hover doesn't break */
-.dropdown::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  height: 6px;
-  z-index: 499;
-}
-
-
-/* ─── DROPDOWN HOVER — desktop only, no gap ─── */
-@media (min-width: 769px) {
-  /* Pure CSS hover — reliable, no JS conflicts */
-  .dropdown:hover .dropdown-menu { display: block; }
-
-  /* top: 100% = flush against button, padding creates visual gap
-     while keeping the hover area continuous — no disappearing */
-  .dropdown-menu {
-    top: 100% !important;
-    padding-top: 8px !important;
-    margin-top: 0 !important;
-  }
-
-  /* Invisible hover bridge — fills any remaining gap */
-  .dropdown::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: -10px;
-    right: -10px;
-    height: 10px;
-    z-index: 499;
-  }
-}
-
-/* Remove onclick from desktop — CSS handles it */
-@media (min-width: 769px) {
-  .dropdown-menu.open { display: block; }
-}
-
 </style>
 </head>
 <body>
@@ -1738,70 +1689,63 @@ nav { border-bottom: 2px solid var(--sage) !important; }
 
   <div class="expect-sections">
 
-    <!-- ARRIVAL -->
     <div class="expect-section">
       <div class="expect-icon">&#128075;</div>
-      <div>
-        <span class="time-badge">10:00 AM &ndash; 1:00 PM</span>
+      <div class="expect-content">
+        <span class="time-badge">10:00 AM &ndash; 12:30 PM</span>
         <h3>Arrival</h3>
         <p>Families typically arrive a few minutes early to settle in, say hello, and get oriented. Because this is not a drop-off program, parents stay on-site and are part of the community throughout the day.</p>
         <p>There is usually a casual, welcoming start as families arrive and children begin to reconnect or meet new friends.</p>
       </div>
     </div>
 
-    <!-- OPENING TIME -->
     <div class="expect-section">
       <div class="expect-icon">&#128218;</div>
-      <div>
+      <div class="expect-content">
         <h3>Opening Time Together</h3>
         <p>We begin as a group with a structured teaching time connected to our current theme. This is where we introduce ideas, set context, and begin building the foundation for the day&rsquo;s learning.</p>
         <p>The goal is not pressure or performance &mdash; it&rsquo;s curiosity, engagement, and shared discovery.</p>
       </div>
     </div>
 
-    <!-- HANDS-ON -->
     <div class="expect-section">
       <div class="expect-icon">&#128295;</div>
-      <div>
+      <div class="expect-content">
         <h3>Hands-On Learning</h3>
         <p>After our teaching time, students move into a hands-on activity tied to the lesson. This may include building, creating, observing, experimenting, or working in small groups.</p>
         <p>This part of the day is active, engaging, and designed to help children experience what they&rsquo;re learning in a meaningful way.</p>
       </div>
     </div>
 
-    <!-- FREE PLAY -->
     <div class="expect-section">
       <div class="expect-icon">&#127807;</div>
-      <div>
+      <div class="expect-content">
         <h3>Free Play &amp; Connection Time</h3>
         <p>We always leave space in our day for free play, exploration, and social time. This is often when some of the best learning and connection happens naturally.</p>
         <p>Children may explore outdoors, continue a project, or simply spend time building friendships.</p>
       </div>
     </div>
 
-    <!-- PARENTS -->
     <div class="expect-section">
       <div class="expect-icon">&#129303;</div>
-      <div>
+      <div class="expect-content">
         <h3>What Parents Do</h3>
         <p>Parents remain present during the entire gathering. Some choose to engage directly with activities, others help supervise or connect with other families.</p>
         <p>Over time, there may also be opportunities for shared teaching or support &mdash; but participation is never about pressure. It&rsquo;s about community.</p>
       </div>
     </div>
 
-    <!-- FIELD TRIPS -->
     <div class="expect-section">
       <div class="expect-icon">&#128652;</div>
-      <div>
+      <div class="expect-content">
         <h3>Field Trip Days</h3>
         <p>On field trip days, we meet at a designated location connected to our theme. These experiences are intentionally chosen to bring our learning into the real world and deepen understanding through observation and experience.</p>
       </div>
     </div>
 
-    <!-- WHAT YOU'LL NOTICE -->
     <div class="expect-section">
       <div class="expect-icon">&#10024;</div>
-      <div>
+      <div class="expect-content">
         <h3>What You&rsquo;ll Notice</h3>
         <p>Most families notice a few things right away:</p>
         <ul class="notice-list">
@@ -1813,10 +1757,9 @@ nav { border-bottom: 2px solid var(--sage) !important; }
       </div>
     </div>
 
-    <!-- FINAL NOTE -->
     <div class="expect-section">
       <div class="expect-icon">&#127968;</div>
-      <div>
+      <div class="expect-content">
         <h3>A Final Note</h3>
         <p>Your first visit is simply about getting to know us. There is no expectation to know how everything works right away. Most families find that the rhythm becomes clear very quickly once they experience it in person.</p>
         <div class="final-note">
@@ -1827,7 +1770,6 @@ nav { border-bottom: 2px solid var(--sage) !important; }
 
   </div>
 
-  <!-- CTA -->
   <div style="background:var(--moss);padding:3.5rem 2rem;text-align:center;">
     <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--cream);margin-bottom:1rem;">Ready to Take the <em style="color:var(--tan);">First Step?</em></h2>
     <p style="font-size:0.92rem;color:var(--cream);opacity:0.88;max-width:480px;margin:0 auto 2rem;line-height:1.9;">We are currently enrolling for the 2026&ndash;2027 school year. Spaces are limited. We&rsquo;d love to meet your family.</p>
