@@ -1634,26 +1634,26 @@ nav { border-bottom: 2px solid var(--sage) !important; }
     </div>
 
     <div>
-      <div class="contact-form" id="contact-form">
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/xzdyvrer" method="POST">
         <div class="form-row">
-          <div class="field"><label>Your Name</label><input type="text" id="f-name" placeholder="First &amp; last name" /></div>
-          <div class="field"><label>Email Address</label><input type="email" id="f-email" placeholder="your@email.com" /></div>
+          <div class="field"><label>Your Name</label><input type="text" id="f-name" name="name" placeholder="First &amp; last name" required /></div>
+          <div class="field"><label>Email Address</label><input type="email" id="f-email" name="email" placeholder="your@email.com" required /></div>
         </div>
-        <div class="field"><label>Number &amp; Ages of Children</label><input type="text" placeholder="e.g. 2 children &mdash; ages 8 and 11" /></div>
+        <div class="field"><label>Number &amp; Ages of Children</label><input type="text" name="children" placeholder="e.g. 2 children &mdash; ages 8 and 11" /></div>
         <div class="field">
           <label>How Can We Help?</label>
-          <select>
-            <option value="">Select one&hellip;</option>
+          <select name="inquiry">
+            <option value="" disabled selected>Select one&hellip;</option>
             <option>I&rsquo;m interested in joining the program</option>
             <option>I&rsquo;d like to be added to the waitlist</option>
             <option>I have a general question</option>
             <option>Something else</option>
           </select>
         </div>
-        <div class="field"><label>Your Message</label><textarea placeholder="Tell us a little about your family and what brought you here&hellip;"></textarea></div>
+        <div class="field"><label>Your Message</label><textarea name="message" placeholder="Tell us a little about your family and what brought you here&hellip;"></textarea></div>
         <p class="form-note">This form goes directly to Danyelle&rsquo;s inbox. She aims to respond within a few days.</p>
-        <button class="btn btn-solid" onclick="submitForm()">Send Message</button>
-      </div>
+        <button class="btn btn-solid" type="submit">Send Message</button>
+      </form>
       <div class="form-success" id="form-success">
         &#127807; Thank you! Your message has been received. Danyelle will be in touch soon &mdash; we&rsquo;re so glad you reached out.
       </div>
