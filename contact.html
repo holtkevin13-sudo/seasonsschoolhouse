@@ -1639,10 +1639,32 @@ nav { border-bottom: 2px solid var(--sage) !important; }
           <div class="field"><label>Your Name</label><input type="text" id="f-name" name="name" placeholder="First &amp; last name" required /></div>
           <div class="field"><label>Email Address</label><input type="email" id="f-email" name="email" placeholder="your@email.com" required /></div>
         </div>
-        <div class="field"><label>Number &amp; Ages of Children</label><input type="text" name="children" placeholder="e.g. 2 children &mdash; ages 8 and 11" /></div>
+        <div class="form-row">
+          <div class="field">
+            <label>Number of Children</label>
+            <select name="num_children">
+              <option value="" disabled selected>Select&hellip;</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Age Range of Children</label>
+            <select name="age_range">
+              <option value="" disabled selected>Select&hellip;</option>
+              <option>Early Elementary (K&ndash;2nd)</option>
+              <option>Upper Elementary (3rd&ndash;5th)</option>
+              <option>Middle School (6th&ndash;8th)</option>
+              <option>Mixed Ages</option>
+            </select>
+          </div>
+        </div>
         <div class="field">
           <label>How Can We Help?</label>
-          <select name="inquiry">
+          <select name="inquiry" required>
             <option value="" disabled selected>Select one&hellip;</option>
             <option>I&rsquo;m interested in joining the program</option>
             <option>I&rsquo;d like to be added to the waitlist</option>
@@ -1650,7 +1672,7 @@ nav { border-bottom: 2px solid var(--sage) !important; }
             <option>Something else</option>
           </select>
         </div>
-        <div class="field"><label>Your Message</label><textarea name="message" placeholder="Tell us a little about your family and what brought you here&hellip;"></textarea></div>
+        <div class="field"><label>Your Message</label><textarea name="message" placeholder="Tell us a little about your family and what brought you here&hellip;" required></textarea></div>
         <p class="form-note">This form goes directly to Danyelle&rsquo;s inbox. She aims to respond within a few days.</p>
         <button class="btn btn-solid" type="submit">Send Message</button>
       </form>
