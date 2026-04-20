@@ -1533,58 +1533,118 @@ nav { border-bottom: 2px solid var(--sage) !important; }
 }
 .hero::before, .hero::after { display: none; }
 
-/* ── Gallery styles ── */
-.gallery-intro {
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 3rem 2rem 1.5rem;
-}
-.gallery-intro p { font-size: 1rem; color: var(--bark); line-height: 2; }
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 0.75rem;
-  max-width: 1060px;
-  margin: 0 auto;
-  padding: 0 1.5rem 4rem;
-}
-
-.gallery-item {
-  aspect-ratio: 4/3;
-  overflow: hidden;
-  border-radius: 4px;
-  background: var(--linen);
+/* ── Slideshow ── */
+.slideshow-wrap {
+  max-width: 900px;
+  margin: 2rem auto 4rem;
+  padding: 0 2rem;
   position: relative;
 }
 
-.gallery-item img {
+.slideshow {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--bark);
+  box-shadow: 0 12px 48px rgba(62,46,34,0.18);
+}
+
+.slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
 }
-.gallery-item:hover img { transform: scale(1.04); }
 
-.gallery-caption {
+.slide-caption {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  background: linear-gradient(to top, rgba(62,46,34,0.75), transparent);
+  background: linear-gradient(to top, rgba(62,46,34,0.78) 0%, transparent 100%);
   color: var(--cream);
   font-family: 'Jost', sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  padding: 1.5rem 0.9rem 0.7rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  padding: 2.5rem 1.4rem 1rem;
 }
-.gallery-item:hover .gallery-caption { opacity: 1; }
 
-@media (max-width: 600px) {
-  .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.4rem; padding: 0 0.75rem 3rem; }
+/* Arrows */
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(250,247,242,0.15);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(250,247,242,0.25);
+  color: var(--cream);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+  z-index: 10;
+  user-select: none;
 }
+.slide-arrow:hover { background: rgba(250,247,242,0.3); }
+.slide-arrow.prev { left: 14px; }
+.slide-arrow.next { right: 14px; }
+
+/* Dots */
+.slide-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.slide-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--linen);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  padding: 0;
+}
+.slide-dot.active {
+  background: var(--moss);
+  transform: scale(1.25);
+}
+
+/* Counter */
+.slide-counter {
+  text-align: center;
+  margin-top: 0.8rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--tan);
+  text-transform: uppercase;
+}
+
+.gallery-intro {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 2rem 1rem;
+}
+.gallery-intro p { font-size: 1rem; color: var(--bark); line-height: 2; }
 </style>
 </head>
 <body>
@@ -1634,51 +1694,73 @@ nav { border-bottom: 2px solid var(--sage) !important; }
     <p>Every image here is a small piece of a larger story &mdash; a community of families choosing to learn, explore, and grow together with intention.</p>
   </div>
 
-  <div class="gallery-grid">
-    <div class="gallery-item">
-      <img src="images/gallery-01.jpg" alt="Learning by doing — compass & map activity" loading="lazy" />
-      <div class="gallery-caption">Learning by doing — compass & map activity</div>
+  <div class="slideshow-wrap">
+
+    <div class="slideshow" id="slideshow">
+      <div class="slide  active">
+      <img src="images/gallery-01.jpg" alt="Learning by doing — compass & map activity" loading=" eager" />
+      <div class="slide-caption">Learning by doing — compass & map activity</div>
     </div>
-    <div class="gallery-item">
-      <img src="images/gallery-02.jpg" alt="Field trip — hospital simulation center" loading="lazy" />
-      <div class="gallery-caption">Field trip — hospital simulation center</div>
+    <div class="slide">
+      <img src="images/gallery-02.jpg" alt="Field trip — hospital simulation center" loading=" eager" />
+      <div class="slide-caption">Field trip — hospital simulation center</div>
     </div>
-    <div class="gallery-item">
+    <div class="slide">
       <img src="images/gallery-03.jpg" alt="Outdoor learning at the park" loading="lazy" />
-      <div class="gallery-caption">Outdoor learning at the park</div>
+      <div class="slide-caption">Outdoor learning at the park</div>
     </div>
-    <div class="gallery-item">
+    <div class="slide">
       <img src="images/gallery-04.jpg" alt="Field trip — medical technology exploration" loading="lazy" />
-      <div class="gallery-caption">Field trip — medical technology exploration</div>
+      <div class="slide-caption">Field trip — medical technology exploration</div>
     </div>
-    <div class="gallery-item">
+    <div class="slide">
       <img src="images/gallery-05.jpg" alt="Science in action — microscope study" loading="lazy" />
-      <div class="gallery-caption">Science in action — microscope study</div>
+      <div class="slide-caption">Science in action — microscope study</div>
     </div>
-    <div class="gallery-item">
+    <div class="slide">
       <img src="images/gallery-06.jpg" alt="Living history field trip" loading="lazy" />
-      <div class="gallery-caption">Living history field trip</div>
+      <div class="slide-caption">Living history field trip</div>
     </div>
-    <div class="gallery-item">
+    <div class="slide">
       <img src="images/gallery-07.jpg" alt="Field trip — historic barn exploration" loading="lazy" />
-      <div class="gallery-caption">Field trip — historic barn exploration</div>
+      <div class="slide-caption">Field trip — historic barn exploration</div>
     </div>
-    <div class="gallery-item">
+    <div class="slide">
       <img src="images/gallery-08.jpg" alt="Teaching time at our outdoor gathering" loading="lazy" />
-      <div class="gallery-caption">Teaching time at our outdoor gathering</div>
+      <div class="slide-caption">Teaching time at our outdoor gathering</div>
     </div>
-    <div class="gallery-item">
+    <div class="slide">
       <img src="images/gallery-09.jpg" alt="Field trip — vineyard walk" loading="lazy" />
-      <div class="gallery-caption">Field trip — vineyard walk</div>
+      <div class="slide-caption">Field trip — vineyard walk</div>
     </div>
-    <div class="gallery-item">
+    <div class="slide">
       <img src="images/gallery-10.jpg" alt="Hands-on harvest at the vineyard" loading="lazy" />
-      <div class="gallery-caption">Hands-on harvest at the vineyard</div>
+      <div class="slide-caption">Hands-on harvest at the vineyard</div>
     </div>
-    <div class="gallery-item">
+    <div class="slide">
       <img src="images/gallery-11.jpg" alt="Grape picking — learning through doing" loading="lazy" />
-      <div class="gallery-caption">Grape picking — learning through doing</div>
+      <div class="slide-caption">Grape picking — learning through doing</div>
     </div>
+      <button class="slide-arrow prev" onclick="prev()" aria-label="Previous">&#8592;</button>
+      <button class="slide-arrow next" onclick="next()" aria-label="Next">&#8594;</button>
+    </div>
+
+    <div class="slide-dots" id="slide-dots">
+      <button class="slide-dot  active" onclick="goTo(0)" aria-label="Slide 1"></button>
+      <button class="slide-dot" onclick="goTo(1)" aria-label="Slide 2"></button>
+      <button class="slide-dot" onclick="goTo(2)" aria-label="Slide 3"></button>
+      <button class="slide-dot" onclick="goTo(3)" aria-label="Slide 4"></button>
+      <button class="slide-dot" onclick="goTo(4)" aria-label="Slide 5"></button>
+      <button class="slide-dot" onclick="goTo(5)" aria-label="Slide 6"></button>
+      <button class="slide-dot" onclick="goTo(6)" aria-label="Slide 7"></button>
+      <button class="slide-dot" onclick="goTo(7)" aria-label="Slide 8"></button>
+      <button class="slide-dot" onclick="goTo(8)" aria-label="Slide 9"></button>
+      <button class="slide-dot" onclick="goTo(9)" aria-label="Slide 10"></button>
+      <button class="slide-dot" onclick="goTo(10)" aria-label="Slide 11"></button>
+    </div>
+
+    <div class="slide-counter" id="slide-counter">1 of 11</div>
+
   </div>
 
   <footer>
@@ -1701,5 +1783,47 @@ nav { border-bottom: 2px solid var(--sage) !important; }
 </div>
 
 <script src="script.js"></script>
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dots   = document.querySelectorAll('.slide-dot');
+  const counter = document.getElementById('slide-counter');
+  let current = 0;
+  let timer;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    counter.textContent = (current + 1) + ' of ' + slides.length;
+    resetTimer();
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 5500);
+  }
+
+  // Start — 5.5 seconds per slide, 1.4s fade
+  timer = setInterval(() => goTo(current + 1), 5500);
+
+  // Pause on hover
+  document.getElementById('slideshow').addEventListener('mouseenter', () => clearInterval(timer));
+  document.getElementById('slideshow').addEventListener('mouseleave', resetTimer);
+
+  // Swipe support for mobile
+  let touchStartX = 0;
+  document.getElementById('slideshow').addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+  });
+  document.getElementById('slideshow').addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+  });
+</script>
 </body>
 </html>
