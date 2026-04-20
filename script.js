@@ -48,3 +48,8 @@ function submitForm() {
   if (form)    form.style.display    = 'none';
   if (success) success.style.display = 'block';
 }
+
+// ─── AUTO-UPDATE FOOTER COPYRIGHT YEAR ─────────────────────────
+document.querySelectorAll('.year').forEach(function (el) {
+  el.textContent = new Date().getFullYear();
+});
