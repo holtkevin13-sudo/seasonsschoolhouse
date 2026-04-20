@@ -1,0 +1,8 @@
+# robots.txt for seasonsschoolhouse.org
+# Allow all well-behaved crawlers to index the entire site.
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://seasonsschoolhouse.org/sitemap.xml
