@@ -129,6 +129,8 @@
     ]
   }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>/* ─── RESET & VARIABLES ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -139,7 +141,7 @@
   --sage:    #7A9B78;
   --sage-lt: #A8C4A5;
   --moss:    #4A6B47;
-  --tan:     #C4A882;
+  --tan:     #A88659;
   --brown:   #6B4F3A;
   --bark:    #3E2E22;
   --white:   #FFFCF8;
@@ -1722,7 +1724,7 @@ nav { border-bottom: 2px solid var(--sage) !important; }
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
-<div class="page-wrapper">
+<main class="page-wrapper">
   <div class="hero">
     <img class="hero-logo" src="logo.png" alt="Seasons Schoolhouse — homeschool enrichment program in Flagler County, Florida" />
     <p class="hero-eyebrow">Homeschool Enrichment Program &middot; Est. 2024 &middot; Flagler County, FL</p>
@@ -1768,11 +1770,11 @@ nav { border-bottom: 2px solid var(--sage) !important; }
       </div>
     </div>
     <div class="quote-dots" id="quote-dots">
-      <button class="quote-dot active" onclick="goToQuote(0)"></button>
-      <button class="quote-dot" onclick="goToQuote(1)"></button>
-      <button class="quote-dot" onclick="goToQuote(2)"></button>
-      <button class="quote-dot" onclick="goToQuote(3)"></button>
-      <button class="quote-dot" onclick="goToQuote(4)"></button>
+      <button class="quote-dot active" onclick="goToQuote(0)" aria-label="Show quote 1"></button>
+      <button class="quote-dot" onclick="goToQuote(1)" aria-label="Show quote 2"></button>
+      <button class="quote-dot" onclick="goToQuote(2)" aria-label="Show quote 3"></button>
+      <button class="quote-dot" onclick="goToQuote(3)" aria-label="Show quote 4"></button>
+      <button class="quote-dot" onclick="goToQuote(4)" aria-label="Show quote 5"></button>
     </div>
   </div>
 
@@ -1792,7 +1794,7 @@ nav { border-bottom: 2px solid var(--sage) !important; }
     </div>
     <p>&copy; 2024 &middot; Seasons Schoolhouse &middot; Flagler County, FL &middot; danyelle@seasonsschoolhouse.org</p>
   </footer>
-</div>
+</main>
 <script src="script.js"></script>
 <script>
   const slides = document.querySelectorAll('.quote-slide');
