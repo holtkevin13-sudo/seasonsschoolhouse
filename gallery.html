@@ -7,7 +7,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <meta property="og:title" content="Gallery — Seasons Schoolhouse" />
-  <meta property="og:description" content="A homeschool enrichment community rooted in experience, nature, and meaningful connection." />
+  <meta property="og:description" content="Moments from our gatherings, field trips, and the everyday beauty of learning together." />
   <meta property="og:image" content="https://seasonsschoolhouse.org/logo.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://seasonsschoolhouse.org/gallery.html" />
@@ -1522,57 +1522,73 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   .handbook-toc-sticky { position: static; }
 }
 
+@media (min-width: 769px) {
+  .dropdown:hover > .dropdown-menu { display: block; }
+  .dropdown-menu { top: 100% !important; padding-top: 8px !important; margin-top: 0 !important; }
+  .dropdown::after { content: ''; position: absolute; top: 100%; left: -10px; right: -10px; height: 10px; z-index: 499; }
+}
+@media (max-width: 768px) {
+  .dropdown-menu { display: none; }
+  .dropdown-menu.open { display: block; position: static; transform: none; box-shadow: none; border: none; padding-left: 1rem; margin-top: 0; }
+}
+.hero::before, .hero::after { display: none; }
 
-.dropdown-menu {
-  top: calc(100% + 2px) !important;
-  margin-top: 0 !important;
+/* ── Gallery styles ── */
+.gallery-intro {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 2rem 1.5rem;
+}
+.gallery-intro p { font-size: 1rem; color: var(--bark); line-height: 2; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
 }
 
-/* Invisible bridge fills gap so hover doesn't break */
-.dropdown::before {
-  content: '';
+.gallery-item {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--linen);
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.gallery-item:hover img { transform: scale(1.04); }
+
+.gallery-caption {
   position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  height: 6px;
-  z-index: 499;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(62,46,34,0.75), transparent);
+  color: var(--cream);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  padding: 1.5rem 0.9rem 0.7rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
+.gallery-item:hover .gallery-caption { opacity: 1; }
 
-
-/* ─── DROPDOWN HOVER — desktop only, no gap ─── */
-@media (min-width: 769px) {
-  /* Pure CSS hover — reliable, no JS conflicts */
-  .dropdown:hover .dropdown-menu { display: block; }
-
-  /* top: 100% = flush against button, padding creates visual gap
-     while keeping the hover area continuous — no disappearing */
-  .dropdown-menu {
-    top: 100% !important;
-    padding-top: 8px !important;
-    margin-top: 0 !important;
-  }
-
-  /* Invisible hover bridge — fills any remaining gap */
-  .dropdown::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: -10px;
-    right: -10px;
-    height: 10px;
-    z-index: 499;
-  }
+@media (max-width: 600px) {
+  .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.4rem; padding: 0 0.75rem 3rem; }
 }
-
-/* Remove onclick from desktop — CSS handles it */
-@media (min-width: 769px) {
-  .dropdown-menu.open { display: block; }
-}
-
 </style>
 </head>
 <body>
+
 <nav>
   <a class="nav-logo" href="index.html">
     <img src="logo.png" alt="Seasons Schoolhouse" />
@@ -1605,7 +1621,9 @@ nav { border-bottom: 2px solid var(--sage) !important; }
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
+
 <div class="page-wrapper">
+
   <div class="page-hero">
     <p class="page-label">A Glimpse Into Our Gatherings</p>
     <h1 class="page-title">Our <em>Gallery</em></h1>
@@ -1613,16 +1631,54 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   </div>
 
   <div class="gallery-intro">
-    <p>Every image here tells a small part of a larger story &mdash; a community of families choosing to learn, explore, and grow together with intention. In keeping with our commitment to privacy, no faces of children are shared publicly.</p>
+    <p>Every image here is a small piece of a larger story &mdash; a community of families choosing to learn, explore, and grow together with intention.</p>
   </div>
 
-  <div class="gallery-grid" id="gallery-grid">
-    <div class="gallery-item"><div class="gallery-placeholder"><span>🌿</span>Coming Soon</div></div>
-    <div class="gallery-item"><div class="gallery-placeholder"><span>🛠️</span>Coming Soon</div></div>
-    <div class="gallery-item"><div class="gallery-placeholder"><span>🌳</span>Coming Soon</div></div>
-    <div class="gallery-item"><div class="gallery-placeholder"><span>🎨</span>Coming Soon</div></div>
-    <div class="gallery-item"><div class="gallery-placeholder"><span>🚌</span>Coming Soon</div></div>
-    <div class="gallery-item"><div class="gallery-placeholder"><span>🍂</span>Coming Soon</div></div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="gallery-01.jpg" alt="Learning by doing — compass & map activity" loading="lazy" />
+      <div class="gallery-caption">Learning by doing — compass & map activity</div>
+    </div>
+    <div class="gallery-item">
+      <img src="gallery-02.jpg" alt="Field trip — hospital simulation center" loading="lazy" />
+      <div class="gallery-caption">Field trip — hospital simulation center</div>
+    </div>
+    <div class="gallery-item">
+      <img src="gallery-03.jpg" alt="Outdoor learning at the park" loading="lazy" />
+      <div class="gallery-caption">Outdoor learning at the park</div>
+    </div>
+    <div class="gallery-item">
+      <img src="gallery-04.jpg" alt="Field trip — medical technology exploration" loading="lazy" />
+      <div class="gallery-caption">Field trip — medical technology exploration</div>
+    </div>
+    <div class="gallery-item">
+      <img src="gallery-05.jpg" alt="Science in action — microscope study" loading="lazy" />
+      <div class="gallery-caption">Science in action — microscope study</div>
+    </div>
+    <div class="gallery-item">
+      <img src="gallery-06.jpg" alt="Living history field trip" loading="lazy" />
+      <div class="gallery-caption">Living history field trip</div>
+    </div>
+    <div class="gallery-item">
+      <img src="gallery-07.jpg" alt="Field trip — historic barn exploration" loading="lazy" />
+      <div class="gallery-caption">Field trip — historic barn exploration</div>
+    </div>
+    <div class="gallery-item">
+      <img src="gallery-08.jpg" alt="Teaching time at our outdoor gathering" loading="lazy" />
+      <div class="gallery-caption">Teaching time at our outdoor gathering</div>
+    </div>
+    <div class="gallery-item">
+      <img src="gallery-09.jpg" alt="Field trip — vineyard walk" loading="lazy" />
+      <div class="gallery-caption">Field trip — vineyard walk</div>
+    </div>
+    <div class="gallery-item">
+      <img src="gallery-10.jpg" alt="Hands-on harvest at the vineyard" loading="lazy" />
+      <div class="gallery-caption">Hands-on harvest at the vineyard</div>
+    </div>
+    <div class="gallery-item">
+      <img src="gallery-11.jpg" alt="Grape picking — learning through doing" loading="lazy" />
+      <div class="gallery-caption">Grape picking — learning through doing</div>
+    </div>
   </div>
 
   <footer>
@@ -1641,7 +1697,9 @@ nav { border-bottom: 2px solid var(--sage) !important; }
     </div>
     <p>&copy; 2024 &middot; Seasons Schoolhouse &middot; Flagler County, FL &middot; myseasonsschoolhouse@gmail.com</p>
   </footer>
+
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
