@@ -966,7 +966,7 @@ nav {
 
 .band-features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
   max-width: 900px;
   margin: 2.5rem auto;
@@ -1568,6 +1568,14 @@ nav { border-bottom: 2px solid var(--sage) !important; }
 /* Remove onclick from desktop — CSS handles it */
 @media (min-width: 769px) {
   .dropdown-menu.open { display: block; }
+}
+
+
+@media (max-width: 640px) {
+  .band-features { grid-template-columns: 1fr !important; }
+}
+@media (min-width: 641px) and (max-width: 900px) {
+  .band-features { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
 </style>
