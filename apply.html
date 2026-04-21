@@ -10,7 +10,10 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <meta property="og:title" content="Apply | Homeschool Enrichment Program Flagler County" />
   <meta property="og:description" content="Apply to Seasons Schoolhouse — a homeschool enrichment program for 3rd–8th grade families in Flagler County & Palm Coast, FL. A four-step application process." />
-  <meta property="og:image" content="https://seasonsschoolhouse.org/logo.png" />
+  <meta property="og:image" content="https://seasonsschoolhouse.org/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Seasons Schoolhouse — Homeschool Enrichment Program, Flagler County, FL" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://seasonsschoolhouse.org/apply.html" />
   <meta property="og:locale" content="en_US" />
@@ -18,7 +21,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Apply | Homeschool Enrichment Program Flagler County" />
   <meta name="twitter:description" content="Apply to Seasons Schoolhouse — a homeschool enrichment program for 3rd–8th grade families in Flagler County & Palm Coast, FL. A four-step application process." />
-  <meta name="twitter:image" content="https://seasonsschoolhouse.org/logo.png" />
+  <meta name="twitter:image" content="https://seasonsschoolhouse.org/og-image.png" />
   <meta name="keywords" content="homeschool enrichment, homeschool co-op Flagler County, homeschool Palm Coast, Christian homeschool Florida, homeschool program 3rd-8th grade, nature study homeschool, STEAM homeschool, homeschool field trips Flagler County, homeschool community Palm Coast" />
   <meta name="author" content="Seasons Schoolhouse" />
   <meta name="robots" content="index, follow" />
@@ -1584,7 +1587,215 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   .dropdown-menu.open { display: block; }
 }
 
+
+/* ─── FAQ ─── */
+.faq-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4rem 2rem 4.5rem;
+}
+.faq-wrap h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 300;
+  color: var(--moss);
+  text-align: center;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+.faq-wrap h2 em { font-style: italic; color: var(--tan); }
+.faq-intro {
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--brown);
+  max-width: 520px;
+  margin: 0 auto 3rem;
+  line-height: 1.9;
+}
+.faq-list { list-style: none; padding: 0; margin: 0; }
+
+.faq-item {
+  border-bottom: 1px solid var(--linen);
+  padding: 0;
+}
+.faq-item:first-child { border-top: 1px solid var(--linen); }
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.4rem 2.5rem 1.4rem 0.2rem;
+  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--moss);
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--sage); }
+
+/* Custom plus/minus indicator */
+.faq-item summary::after {
+  content: '';
+  position: absolute;
+  right: 0.4rem;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  background-image:
+    linear-gradient(var(--tan), var(--tan)),
+    linear-gradient(var(--tan), var(--tan));
+  background-position: center, center;
+  background-size: 14px 1px, 1px 14px;
+  background-repeat: no-repeat;
+  transition: transform 0.25s ease;
+}
+.faq-item[open] summary::after {
+  background-size: 14px 1px, 0 0;
+  transform: rotate(180deg);
+}
+.faq-item summary:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.faq-answer {
+  padding: 0 2.5rem 1.6rem 0.2rem;
+  font-size: 0.92rem;
+  line-height: 1.95;
+  color: var(--brown);
+  animation: faqFade 0.28s ease;
+}
+.faq-answer a {
+  color: var(--sage);
+  text-decoration: none;
+  border-bottom: 1px solid var(--sage-lt);
+  transition: color 0.2s, border-color 0.2s;
+}
+.faq-answer a:hover { color: var(--moss); border-color: var(--moss); }
+
+@keyframes faqFade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.faq-footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--linen);
+}
+.faq-footer p {
+  font-size: 0.88rem;
+  color: var(--brown);
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+}
+.faq-footer a {
+  color: var(--sage);
+  text-decoration: none;
+  border-bottom: 1px solid var(--sage-lt);
+}
+.faq-footer a:hover { color: var(--moss); border-color: var(--moss); }
+
+@media (max-width: 600px) {
+  .faq-wrap { padding: 3rem 1.5rem; }
+  .faq-item summary { font-size: 1.08rem; padding-right: 2.2rem; }
+  .faq-answer { font-size: 0.9rem; }
+}
+
 </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What grades does Seasons Schoolhouse serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We welcome children in grades 3\u20138 (roughly ages 9 through 14). This age range lets us build real community across siblings and friendships while keeping our rhythm and content appropriately focused. We are intentionally not serving younger children at this time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often do you meet, and when?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We gather bi-weekly during the traditional school year \u2014 September through May \u2014 with occasional breaks around the holidays. Our full calendar is posted each summer, and accepted families receive it as part of their welcome materials."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where do you meet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our regular gatherings are held at a private location in Flagler County, Florida, and our field trips take us across the surrounding area \u2014 from nature preserves to historic sites to working farms. For privacy, the specific meeting location is shared with families after acceptance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does it cost to participate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seasons Schoolhouse operates on a simple per-family model that covers materials, field trip admissions, and program costs. We share the specific numbers with families during the interview step, so we can walk through what is included and answer any questions directly. Our goal is transparency \u2014 no surprises, no add-ons mid-year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does a typical gathering look like?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A day at Seasons Schoolhouse begins with gathering time and a short devotion, flows into our main theme for the week \u2014 which might be nature study, history, or a hands-on STEAM project \u2014 pauses for a shared lunch, and closes with an afternoon activity or creative work. Parents remain on-site throughout. A full walk-through is available on our What to Expect page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you follow a specific curriculum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seasons Schoolhouse is an enrichment program, not a curriculum. Every family continues with whatever home curriculum works for them, and our gatherings add shared experiences \u2014 nature study, living history, STEAM, art, and field trips \u2014 that are hard to replicate at the kitchen table. We complement your homeschool; we do not replace it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are you a school or a religious organization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We are neither, exactly. Seasons Schoolhouse is not a school, a tutoring service, a daycare, or a drop-off program \u2014 we are a homeschool enrichment community. Our program is rooted in a Biblical worldview, and we welcome families who share or respect that foundation. The Values page describes our philosophy in full."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I apply?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our application is a five-step process: a written application, time on our waitlist if needed, a conversational interview with Danyelle, a trial gathering, and enrollment. You can start with the Apply Now button on this page \u2014 we review every application personally."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a waitlist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sometimes, yes. We cap our gatherings intentionally so every child is known and every family has space to connect, which means openings come up as families move through different life seasons. We keep the waitlist carefully and reach out as space becomes available \u2014 community fit matters more than speed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my child has additional learning needs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We want to have a real conversation with every family about whether Seasons Schoolhouse is the right fit. Our program is hands-on, mixed-age, and community-based, and parents remain on-site throughout the day \u2014 which works beautifully for many children and is simply not the right environment for others. The interview step is where we talk through your child's needs together, honestly."
+        }
+      }
+    ]
+  }
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NDZ4TR4262"></script>
   <script>
@@ -1635,11 +1846,13 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   </div>
 
   <div class="apply-intro">
+    <p>Seasons Schoolhouse is a community built on shared vision. We want every family who joins to feel confident they&rsquo;ve found the right fit &mdash; and we believe the best way to know that is to get to know us first. Please review these resources before submitting your application.</p>
   </div>
 
   <div class="prereview">
     <div class="prereview-inner">
       <h2>Before You Apply</h2>
+      <p>We strongly encourage every prospective family to review these resources to ensure our vision aligns with your homeschool journey.</p>
       <div class="prereview-cards">
         <a class="prereview-card" href="about.html">
           <span class="icon">📖</span>
@@ -1706,6 +1919,91 @@ nav { border-bottom: 2px solid var(--sage) !important; }
     <p>We are currently enrolling for the <strong style="font-weight:500;">2026&ndash;2027 school year</strong>. Spaces are limited and filled with community fit in mind. We&rsquo;d love to meet your family.</p>
     <a class="btn btn-solid" href="https://forms.gle/gbuk6UfWRj9mGWi5A" target="_blank" rel="noopener noreferrer">Apply Now</a>
     
+  </div>
+
+
+  <div class="faq-wrap" id="faq">
+    <h2>Common <em>Questions</em></h2>
+    <p class="faq-intro">A few things prospective families most often ask. If you don&rsquo;t see your question here, we&rsquo;d love to hear from you directly.</p>
+
+    <ul class="faq-list">
+
+      <li><details class="faq-item">
+        <summary>What grades does Seasons Schoolhouse serve?</summary>
+        <div class="faq-answer">
+          <p>We welcome children in grades 3&ndash;8 (roughly ages 9 through 14). This age range lets us build real community across siblings and friendships while keeping our rhythm and content appropriately focused. We&rsquo;re intentionally not serving younger children at this time.</p>
+        </div>
+      </details></li>
+
+      <li><details class="faq-item">
+        <summary>How often do you meet, and when?</summary>
+        <div class="faq-answer">
+          <p>We gather bi-weekly during the traditional school year &mdash; September through May &mdash; with occasional breaks around the holidays. Our full <a href="calendar.html">calendar</a> is posted each summer, and accepted families receive it as part of their welcome materials.</p>
+        </div>
+      </details></li>
+
+      <li><details class="faq-item">
+        <summary>Where do you meet?</summary>
+        <div class="faq-answer">
+          <p>Our regular gatherings are held at a private location in Flagler County, Florida, and our field trips take us across the surrounding area &mdash; from nature preserves to historic sites to working farms. For privacy, the specific meeting location is shared with families after acceptance.</p>
+        </div>
+      </details></li>
+
+      <li><details class="faq-item">
+        <summary>What does it cost to participate?</summary>
+        <div class="faq-answer">
+          <p>Seasons Schoolhouse operates on a simple per-family model that covers materials, field trip admissions, and program costs. We share the specific numbers with families during the interview step, so we can walk through what&rsquo;s included and answer any questions directly. Our goal is transparency &mdash; no surprises, no add-ons mid-year.</p>
+        </div>
+      </details></li>
+
+      <li><details class="faq-item">
+        <summary>What does a typical gathering look like?</summary>
+        <div class="faq-answer">
+          <p>A day at Seasons Schoolhouse begins with gathering time and a short devotion, flows into our main theme for the week &mdash; which might be nature study, history, or a hands-on STEAM project &mdash; pauses for a shared lunch, and closes with an afternoon activity or creative work. Parents remain on-site throughout. You can see a full walk-through on our <a href="expect.html">What to Expect</a> page.</p>
+        </div>
+      </details></li>
+
+      <li><details class="faq-item">
+        <summary>Do you follow a specific curriculum?</summary>
+        <div class="faq-answer">
+          <p>Seasons Schoolhouse is an enrichment program, not a curriculum. Every family continues with whatever home curriculum works for them, and our gatherings add shared experiences &mdash; nature study, living history, STEAM, art, and field trips &mdash; that are hard to replicate at the kitchen table. We complement your homeschool; we don&rsquo;t replace it.</p>
+        </div>
+      </details></li>
+
+      <li><details class="faq-item">
+        <summary>Are you a school or a religious organization?</summary>
+        <div class="faq-answer">
+          <p>We&rsquo;re neither, exactly. Seasons Schoolhouse is not a school, a tutoring service, a daycare, or a drop-off program &mdash; we&rsquo;re a homeschool enrichment community. Our program is rooted in a Biblical worldview, and we welcome families who share or respect that foundation. If you&rsquo;d like to read more, our <a href="values.html">Values</a> page lays it out in full.</p>
+        </div>
+      </details></li>
+
+      <li><details class="faq-item">
+        <summary>How do I apply?</summary>
+        <div class="faq-answer">
+          <p>Our application is a five-step process: a written application, time on our waitlist if needed, a conversational interview with Danyelle, a trial gathering, and enrollment. You can start with the <strong>Apply Now</strong> button at the top of this page &mdash; we review every application personally.</p>
+        </div>
+      </details></li>
+
+      <li><details class="faq-item">
+        <summary>Is there a waitlist?</summary>
+        <div class="faq-answer">
+          <p>Sometimes, yes. We cap our gatherings intentionally so every child is known and every family has space to connect, which means openings come up as families move through different life seasons. We keep the waitlist carefully and reach out as space becomes available &mdash; community fit matters more than speed.</p>
+        </div>
+      </details></li>
+
+      <li><details class="faq-item">
+        <summary>What if my child has additional learning needs?</summary>
+        <div class="faq-answer">
+          <p>We want to have a real conversation with every family about whether Seasons Schoolhouse is the right fit. Our program is hands-on, mixed-age, and community-based, and parents remain on-site throughout the day &mdash; which works beautifully for many children and is simply not the right environment for others. The interview step is where we talk through your child&rsquo;s needs together, honestly.</p>
+        </div>
+      </details></li>
+
+    </ul>
+
+    <div class="faq-footer">
+      <p>Still have questions? We&rsquo;d love to hear from you.</p>
+      <a href="contact.html">Get in touch &rarr;</a>
+    </div>
   </div>
 
   <footer>
