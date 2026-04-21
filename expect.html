@@ -1611,51 +1611,62 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   margin-bottom: 0.85rem;
 }
 
-/* ─── EXPECT PAGE: DAY STEPS ─── */
-.day-steps-wrap {
-  max-width: 760px;
+/* ─── EXPECT PAGE: TIMELINE ─── */
+.timeline-section {
+  max-width: 720px;
   margin: 0 auto;
   padding: 0 2rem;
 }
-.day-steps {
+.timeline {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 0 0 2.4rem;
+  position: relative;
 }
-.day-step {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 2rem;
-  padding: 2.4rem 0;
-  border-bottom: 1px solid var(--linen);
-  align-items: start;
+.timeline-stop {
+  position: relative;
+  padding-bottom: 2.8rem;
 }
-.day-step:last-child { border-bottom: none; }
-.day-step-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--tan);
-  line-height: 1;
-  opacity: 0.75;
-  letter-spacing: 0.02em;
+.timeline-stop:last-child { padding-bottom: 0; }
+.timeline-stop::before {
+  content: '';
+  position: absolute;
+  left: -2.4rem;
+  top: 0.7rem;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--sage);
+  z-index: 2;
 }
-.day-step-body h3 {
+.timeline-stop::after {
+  content: '';
+  position: absolute;
+  left: calc(-2.4rem + 6px);
+  top: calc(0.7rem + 17px);
+  bottom: 0;
+  width: 1px;
+  background: var(--tan);
+  opacity: 0.4;
+  z-index: 1;
+}
+.timeline-stop:last-child::after { display: none; }
+.timeline-stop h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--moss);
   line-height: 1.2;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
 }
-.day-step-body p {
+.timeline-stop p {
   font-size: 0.95rem;
   color: var(--bark);
   line-height: 2;
   margin-bottom: 0.9rem;
 }
-.day-step-body p:last-child { margin-bottom: 0; }
+.timeline-stop p:last-child { margin-bottom: 0; }
 
 /* ─── EXPECT PAGE: PARENT BAND ─── */
 .expect-band {
@@ -1679,7 +1690,7 @@ nav { border-bottom: 2px solid var(--sage) !important; }
 
 /* ─── EXPECT PAGE: FIELD TRIP CALLOUT ─── */
 .expect-callout {
-  max-width: 760px;
+  max-width: 720px;
   margin: 4rem auto 0;
   padding: 0 2rem;
 }
@@ -1709,7 +1720,7 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   margin: 0;
 }
 
-/* ─── EXPECT PAGE: NOTICE SECTION ─── */
+/* ─── EXPECT PAGE: NOTICE GRID ─── */
 .notice-section {
   max-width: 760px;
   margin: 0 auto;
@@ -1723,34 +1734,32 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   margin: -1rem auto 2rem;
   max-width: 520px;
 }
-.notice-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.notice-list li {
+.notice-grid {
   display: grid;
-  grid-template-columns: 60px 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
-  padding: 1.15rem 0;
-  border-bottom: 1px solid var(--linen);
-  align-items: baseline;
+  max-width: 680px;
+  margin: 0 auto;
 }
-.notice-list li:last-child { border-bottom: none; }
-.notice-list li .notice-num {
+.notice-card {
+  background: var(--white);
+  border: 1px solid var(--linen);
+  border-top: 3px solid var(--sage);
+  border-radius: 0 0 4px 4px;
+  padding: 1.7rem 1.5rem;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.notice-card p {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem;
+  font-size: 1.08rem;
   font-weight: 400;
   font-style: italic;
-  color: var(--tan);
-  line-height: 1;
-  opacity: 0.85;
-  letter-spacing: 0.02em;
-}
-.notice-list li p {
-  font-size: 0.95rem;
   color: var(--bark);
-  line-height: 1.85;
+  line-height: 1.55;
   margin: 0;
 }
 
@@ -1794,11 +1803,11 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   .expect-fact:nth-child(2) { border-right: none; }
   .expect-fact:nth-child(1),
   .expect-fact:nth-child(2) { border-bottom: 1px solid var(--linen); }
-  .day-step { grid-template-columns: 64px 1fr; gap: 1.1rem; padding: 1.8rem 0; }
-  .day-step-num { font-size: 2.3rem; }
-  .day-step-body h3 { font-size: 1.3rem; }
-  .notice-list li { grid-template-columns: 42px 1fr; gap: 0.8rem; }
-  .notice-list li .notice-num { font-size: 1.15rem; }
+  .timeline { padding-left: 2rem; max-width: 100%; }
+  .timeline-stop::before { left: -2rem; }
+  .timeline-stop::after { left: calc(-2rem + 6px); }
+  .timeline-stop h3 { font-size: 1.3rem; }
+  .notice-grid { grid-template-columns: 1fr; }
   .section-lead { margin: 3rem auto 2rem; }
   .expect-band { padding: 0.5rem 0 3rem; margin-top: 3rem; }
   .expect-callout { margin-top: 3rem; }
@@ -1879,44 +1888,32 @@ nav { border-bottom: 2px solid var(--sage) !important; }
     <p>We know that joining a new community can feel like a big step &mdash; especially in homeschooling where every group has its own rhythm. This page is here to help you know exactly what your first day at Seasons Schoolhouse will look like.</p>
   </div>
 
-  <section class="day-steps-wrap">
+  <section class="timeline-section">
     <div class="section-lead">
       <p class="section-eyebrow">A Gathering, Start to Finish</p>
       <h2 class="section-heading">Your Day With <em>Us</em></h2>
     </div>
 
-    <ol class="day-steps">
-      <li class="day-step">
-        <span class="day-step-num">01</span>
-        <div class="day-step-body">
-          <h3>Arrival</h3>
-          <p>Families typically arrive a few minutes early to settle in, say hello, and get oriented. Because this is not a drop-off program, parents stay on-site and are part of the community throughout the day.</p>
-          <p>There is usually a casual, welcoming start as families arrive and children begin to reconnect or meet new friends.</p>
-        </div>
+    <ol class="timeline">
+      <li class="timeline-stop">
+        <h3>Arrival</h3>
+        <p>Families typically arrive a few minutes early to settle in, say hello, and get oriented. Because this is not a drop-off program, parents stay on-site and are part of the community throughout the day.</p>
+        <p>There is usually a casual, welcoming start as families arrive and children begin to reconnect or meet new friends.</p>
       </li>
-      <li class="day-step">
-        <span class="day-step-num">02</span>
-        <div class="day-step-body">
-          <h3>Opening Time Together</h3>
-          <p>We begin as a group with a structured teaching time connected to our current theme. This is where we introduce ideas, set context, and begin building the foundation for the day&rsquo;s learning.</p>
-          <p>The goal is not pressure or performance &mdash; it&rsquo;s curiosity, engagement, and shared discovery.</p>
-        </div>
+      <li class="timeline-stop">
+        <h3>Opening Time Together</h3>
+        <p>We begin as a group with a structured teaching time connected to our current theme. This is where we introduce ideas, set context, and begin building the foundation for the day&rsquo;s learning.</p>
+        <p>The goal is not pressure or performance &mdash; it&rsquo;s curiosity, engagement, and shared discovery.</p>
       </li>
-      <li class="day-step">
-        <span class="day-step-num">03</span>
-        <div class="day-step-body">
-          <h3>Hands-On Learning</h3>
-          <p>After our teaching time, students move into a hands-on activity tied to the lesson. This may include building, creating, observing, experimenting, or working in small groups.</p>
-          <p>This part of the day is active, engaging, and designed to help children experience what they&rsquo;re learning in a meaningful way.</p>
-        </div>
+      <li class="timeline-stop">
+        <h3>Hands-On Learning</h3>
+        <p>After our teaching time, students move into a hands-on activity tied to the lesson. This may include building, creating, observing, experimenting, or working in small groups.</p>
+        <p>This part of the day is active, engaging, and designed to help children experience what they&rsquo;re learning in a meaningful way.</p>
       </li>
-      <li class="day-step">
-        <span class="day-step-num">04</span>
-        <div class="day-step-body">
-          <h3>Free Play &amp; Connection Time</h3>
-          <p>We always leave space in our day for free play, exploration, and social time. This is often when some of the best learning and connection happens naturally.</p>
-          <p>Children may explore outdoors, continue a project, or simply spend time building friendships.</p>
-        </div>
+      <li class="timeline-stop">
+        <h3>Free Play &amp; Connection Time</h3>
+        <p>We always leave space in our day for free play, exploration, and social time. This is often when some of the best learning and connection happens naturally.</p>
+        <p>Children may explore outdoors, continue a project, or simply spend time building friendships.</p>
       </li>
     </ol>
   </section>
@@ -1946,24 +1943,20 @@ nav { border-bottom: 2px solid var(--sage) !important; }
       <h2 class="section-heading">What You&rsquo;ll <em>Notice</em></h2>
     </div>
     <p class="notice-lead">Most families notice a few things right away.</p>
-    <ol class="notice-list">
-      <li>
-        <span class="notice-num">01</span>
+    <div class="notice-grid">
+      <div class="notice-card">
         <p>The rhythm of the day is calm but intentional.</p>
-      </li>
-      <li>
-        <span class="notice-num">02</span>
+      </div>
+      <div class="notice-card">
         <p>Children engage quickly, even if they are new.</p>
-      </li>
-      <li>
-        <span class="notice-num">03</span>
+      </div>
+      <div class="notice-card">
         <p>Parents naturally begin connecting with one another.</p>
-      </li>
-      <li>
-        <span class="notice-num">04</span>
+      </div>
+      <div class="notice-card">
         <p>Learning feels active, not forced or overly structured.</p>
-      </li>
-    </ol>
+      </div>
+    </div>
   </section>
 
   <section class="final-section">
