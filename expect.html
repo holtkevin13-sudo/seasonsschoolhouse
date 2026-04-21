@@ -1552,7 +1552,7 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   max-width: 960px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--linen);
   border-bottom: 1px solid var(--linen);
 }
@@ -1799,10 +1799,9 @@ nav { border-bottom: 2px solid var(--sage) !important; }
 
 /* ─── EXPECT PAGE: MOBILE ─── */
 @media (max-width: 640px) {
-  .expect-facts { grid-template-columns: repeat(2, 1fr); }
-  .expect-fact:nth-child(2) { border-right: none; }
-  .expect-fact:nth-child(1),
-  .expect-fact:nth-child(2) { border-bottom: 1px solid var(--linen); }
+  .expect-fact { padding: 1.2rem 0.5rem; gap: 0.35rem; }
+  .fact-label { font-size: 0.6rem; letter-spacing: 0.16em; }
+  .fact-value { font-size: 0.88rem; }
   .timeline { padding-left: 2rem; max-width: 100%; }
   .timeline-stop::before { left: -2rem; }
   .timeline-stop::after { left: calc(-2rem + 6px); }
@@ -1878,14 +1877,6 @@ nav { border-bottom: 2px solid var(--sage) !important; }
       <span class="fact-label">Format</span>
       <span class="fact-value">Parents on-site</span>
     </div>
-    <div class="expect-fact">
-      <span class="fact-label">Location</span>
-      <span class="fact-value">Flagler County, FL</span>
-    </div>
-  </div>
-
-  <div class="expect-intro">
-    <p>We know that joining a new community can feel like a big step &mdash; especially in homeschooling where every group has its own rhythm. This page is here to help you know exactly what your first day at Seasons Schoolhouse will look like.</p>
   </div>
 
   <section class="timeline-section">
