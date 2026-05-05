@@ -1766,35 +1766,8 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   </div>
 
   <div class="quote-band">
-    <div class="quote-slides-wrap" id="quote-slides-wrap">
-      <div class="quote-slide active">
-        <blockquote>&ldquo;Tell me and I forget. Teach me and I remember. Involve me and I learn.&rdquo;</blockquote>
-        <cite>&mdash; Benjamin Franklin</cite>
-      </div>
-      <div class="quote-slide">
-        <blockquote>&ldquo;I am not afraid of storms, for I am learning how to sail my ship.&rdquo;</blockquote>
-        <cite>&mdash; Louisa May Alcott</cite>
-      </div>
-      <div class="quote-slide">
-        <blockquote>&ldquo;Education is an atmosphere, a discipline, a life.&rdquo;</blockquote>
-        <cite>&mdash; Charlotte Mason</cite>
-      </div>
-      <div class="quote-slide">
-        <blockquote>&ldquo;The heavens declare the glory of God; the skies proclaim the work of his hands.&rdquo;</blockquote>
-        <cite>&mdash; Psalm 19:1</cite>
-      </div>
-      <div class="quote-slide">
-        <blockquote>&ldquo;Look deep into nature, and then you will understand everything better.&rdquo;</blockquote>
-        <cite>&mdash; Albert Einstein</cite>
-      </div>
-    </div>
-    <div class="quote-dots" id="quote-dots">
-      <button class="quote-dot active" onclick="goToQuote(0)" aria-label="Show quote 1"></button>
-      <button class="quote-dot" onclick="goToQuote(1)" aria-label="Show quote 2"></button>
-      <button class="quote-dot" onclick="goToQuote(2)" aria-label="Show quote 3"></button>
-      <button class="quote-dot" onclick="goToQuote(3)" aria-label="Show quote 4"></button>
-      <button class="quote-dot" onclick="goToQuote(4)" aria-label="Show quote 5"></button>
-    </div>
+    <blockquote>&ldquo;Education is an atmosphere, a discipline, a life.&rdquo;</blockquote>
+    <cite>&mdash; Charlotte Mason</cite>
   </div>
 
   <footer>
@@ -1811,24 +1784,8 @@ nav { border-bottom: 2px solid var(--sage) !important; }
       <a href="apply.html">Apply</a>
       <a href="contact.html">Contact</a>
     </div>
-    <p>&copy; <span class="year">2026</span> Seasons Schoolhouse LLC &middot; Palm Coast, FL &middot; danyelle@seasonsschoolhouse.org</p>
+    <p>&copy; <span class="year">2026</span> Seasons Schoolhouse LLC &middot; Palm Coast, FL</p>
   </footer>
 </main>
 <script src="script.js"></script>
-<script>
-  const slides = document.querySelectorAll('.quote-slide');
-  const dots   = document.querySelectorAll('.quote-dot');
-  let current = 0, timer;
-  function goToQuote(i) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = i;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-    resetTimer();
-  }
-  function nextQuote() { goToQuote((current + 1) % slides.length); }
-  function resetTimer() { clearInterval(timer); timer = setInterval(nextQuote, 6500); }
-  timer = setInterval(nextQuote, 6500);
-</script>
 </body></html>
