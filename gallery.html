@@ -1594,6 +1594,14 @@ nav { border-bottom: 2px solid var(--sage) !important; }
   display: block;
 }
 
+.slide.portrait-fix {
+  background: var(--cream);
+}
+.slide.portrait-fix img {
+  object-fit: contain;
+  transform: rotate(90deg) scale(0.75);
+}
+
 .slide-caption {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -1749,7 +1757,7 @@ nav { border-bottom: 2px solid var(--sage) !important; }
     <div class="slide">
       <img src="images/gallery-07.jpg" alt="Seasons Schoolhouse homeschool field trip exploring a historic barn in Florida" loading="lazy" />
     </div>
-    <div class="slide">
+    <div class="slide portrait-fix">
       <img src="images/gallery-08.jpg" alt="Young student building a small structure from sticks in a grassy field during outdoor learning" loading="lazy" />
     </div>
     <div class="slide">
@@ -1770,7 +1778,7 @@ nav { border-bottom: 2px solid var(--sage) !important; }
     <div class="slide">
       <img src="images/gallery-14.jpg" alt="Homeschool students and families attending a hands-on science presentation at a Florida education center" loading="lazy" />
     </div>
-    <div class="slide">
+    <div class="slide portrait-fix">
       <img src="images/gallery-15.jpg" alt="Group of homeschool students gathered around a craftsman demonstrating traditional woodworking at a historic site" loading="lazy" />
     </div>
       <button class="slide-arrow prev" onclick="prev()" aria-label="Previous">&#8592;</button>
