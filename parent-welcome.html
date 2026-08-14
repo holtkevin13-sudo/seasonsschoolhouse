@@ -534,6 +534,46 @@
     font-size: 1rem;
   }
 
+  /* ---------- SCHOLARSHIP PAYMENT PATHS ---------- */
+  .pay-path {
+    max-width: 680px;
+    margin: 2rem auto 0;
+    padding: 1.5rem 1.75rem 1.25rem;
+    background: var(--cream);
+    border: 1px solid var(--sage-soft);
+    border-radius: 3px;
+  }
+  .pay-path + .pay-path { margin-top: 1.5rem; }
+  .pay-path-tag {
+    display: inline-block;
+    font-family: "Jost", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--moss);
+    background: rgba(154, 184, 154, 0.22);
+    border-radius: 2px;
+    padding: 0.28rem 0.6rem;
+    margin-bottom: 0.75rem;
+  }
+  .pay-path-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--moss-deep);
+    margin: 0 0 0.4rem;
+    line-height: 1.2;
+  }
+  .pay-path-title em { font-style: italic; color: var(--moss); }
+  .pay-path-lede {
+    color: var(--ink-soft);
+    font-size: 0.97rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .pay-path .process-list { margin: 1.1rem 0 0; }
+  .pay-path .process-list li { padding-top: 0.8rem; padding-bottom: 0.8rem; }
+
   .ready-list {
     max-width: 680px;
     margin: 1.5rem auto;
@@ -745,46 +785,24 @@
   }
 
   /* ---------- STEP UP FOR STUDENTS MARK ----------
-     Typographic placeholder using SUFS brand palette (navy + red).
-     Replace with their official SVG logo when downloaded from:
-     https://www.stepupforstudents.org/wp-content/uploads/SUFS-LOGO-2025.svg
-     (save to repo root as /step-up-logo.svg and swap the .step-up-mark div
-      for an <img src="/step-up-logo.svg" alt="Step Up For Students — Florida Scholarship Program logo" width="220">)
+     Official SUFS 2025 logo, served from /step-up-logo.svg.
+     Circular badge on a white field (900x900 viewBox) — sized by width
+     alone so the aspect ratio is preserved. Do not recolor, crop, or
+     redraw the mark; it is Step Up For Students' trademark.
   ---------------------------------------------- */
   .step-up-wrap {
     max-width: 680px;
     margin: 0 auto 2rem;
     text-align: center;
   }
-  .step-up-mark {
-    display: inline-block;
-    padding: 1rem 1.5rem 0.85rem;
-    background: #ffffff;
-    border: 1.5px solid #1c3d6e;
-    border-radius: 3px;
-    box-shadow: var(--shadow-sm);
+  .step-up-logo {
+    display: block;
+    width: 150px;
+    height: auto;
+    margin: 0 auto;
   }
-  .step-up-mark-line1 {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-weight: 700;
-    font-size: 1.75rem;
-    letter-spacing: 0.05em;
-    color: #1c3d6e;
-    line-height: 1;
-  }
-  .step-up-mark-line1 em {
-    font-style: italic;
-    font-weight: 700;
-    color: #c8323a;
-  }
-  .step-up-mark-line2 {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-style: italic;
-    font-size: 0.92rem;
-    color: #1c3d6e;
-    margin-top: 0.3rem;
-    letter-spacing: 0.04em;
-    opacity: 0.85;
+  @media (max-width: 600px) {
+    .step-up-logo { width: 124px; }
   }
   .step-up-disclaimer {
     max-width: 520px;
@@ -875,8 +893,8 @@
           <span class="number-label">Gatherings</span>
         </div>
         <div class="number-card">
-          <span class="number-value">6</span>
-          <span class="number-label">Paid Field Trips</span>
+          <span class="number-value">8</span>
+          <span class="number-label">Field Trips</span>
         </div>
         <div class="number-card">
           <span class="number-value">3</span>
@@ -897,7 +915,7 @@
         <div class="category-col">
           <h3>Field Trips</h3>
           <p>
-            Six trips take us further afield — to museums, nature preserves,
+            Eight trips take us further afield — to museums, nature preserves,
             historical sites, and working farms. We balance paid destinations
             like Silver Springs, Timucuan, and St. Augustine with free local
             outings that let us explore Florida on a shoestring.
@@ -937,8 +955,8 @@
         </div>
         <div class="pricing-row">
           <div>
-            <span class="pricing-row-label">Parent Fee</span>
-            <span class="pricing-row-sub">per parent &middot; school year</span>
+            <span class="pricing-row-label">Registration Fee</span>
+            <span class="pricing-row-sub">school year</span>
           </div>
           <span class="pricing-row-amount">$100 / year</span>
         </div>
@@ -952,9 +970,9 @@
         <li>Field trips and experiential learning activities</li>
       </ul>
 
-      <div class="pricing-card-label">Parent Fee Covers</div>
+      <div class="pricing-card-label">Registration Fee Covers</div>
       <ul class="includes-list">
-        <li>Parent admission and participation costs for all field trips and experiential learning activities throughout the school year</li>
+        <li>Admission and participation for all field trips and experiential learning activities throughout the school year</li>
       </ul>
 
       <p>
@@ -966,8 +984,8 @@
 
       <p>
         Because we&rsquo;re a parent-participatory program, at least one parent
-        from each family joins us for field trips throughout the year. The parent
-        fee is $100 each, <strong>paid in full in August</strong>. If paying
+        from each family joins us for field trips throughout the year. The
+        registration fee is $100 each, <strong>paid in full in August</strong>. If paying
         everything up front in August is simpler for your family, you&rsquo;re
         welcome to do that too &mdash; just let us know.
       </p>
@@ -1056,7 +1074,7 @@
              Read Online
           </a>
           <a class="btn btn-secondary"
-             href="/parent-handbook.pdf"
+             href="/handbook.pdf"
              target="_blank"
              rel="noopener noreferrer">
              Download PDF
@@ -1129,28 +1147,19 @@
     <div class="container narrow">
       <div style="text-align:center;">
         <span class="step-label">Step 3 of 3 · Optional</span>
-        <h2 class="step-heading">Scholarship <em>Reimbursement</em></h2>
+        <h2 class="step-heading">Using Your <em>Scholarship</em></h2>
       </div>
       <div class="step-body">
 
         <div class="step-up-wrap">
-        <!--
-          TYPOGRAPHIC PLACEHOLDER for Step Up For Students brand mark.
-          To swap in their official logo:
-            1. Download https://www.stepupforstudents.org/wp-content/uploads/SUFS-LOGO-2025.svg
-            2. Save to repo root as /step-up-logo.svg
-            3. Replace the <div class="step-up-mark">...</div> block below with:
-               <img src="/step-up-logo.svg"
-                    alt="Step Up For Students — Florida Scholarship Program logo"
-                    width="220" style="height:auto;">
-        -->
-        <div class="step-up-mark" role="img" aria-label="Step Up For Students — Florida Scholarship Program">
-          <div class="step-up-mark-line1">STEP <em>UP</em></div>
-          <div class="step-up-mark-line2">For Students</div>
-        </div>
+        <img class="step-up-logo"
+             src="/step-up-logo.svg"
+             width="900" height="900"
+             alt="Step Up For Students &mdash; Florida Scholarship Program"
+             loading="lazy" />
         <p class="step-up-disclaimer">
-          Seasons Schoolhouse LLC is working toward becoming a direct
-          provider for Step Up For Students.
+          Seasons Schoolhouse LLC is an approved direct provider for
+          Step Up For Students.
         </p>
       </div>
 
@@ -1163,50 +1172,98 @@
 
         <p>
           If your family participates in Step Up For Students, Seasons
-          Schoolhouse tuition may be reimbursable. We're working toward
-          becoming a direct provider. While that's in progress, here's how
-          reimbursement works today:
+          Schoolhouse is an approved direct provider &mdash; so you have
+          two ways to use your scholarship for student tuition. Either
+          works; choose whichever fits your family.
         </p>
 
-        <ol class="process-list">
-          <li>
-            After you complete the Family Form, you'll receive an invoice by
-            email from <strong>Seasons Schoolhouse LLC</strong>.
-          </li>
-          <li>
-            Pay the invoice. You'll receive a receipt by email once payment
-            is processed.
-          </li>
-          <li>
-            Log in to your Step Up For Students account and open the
-            <strong>EMA portal</strong> (Education Market Assistant). Go to
-            the <em>Reimbursements</em> section and start a new request.
-          </li>
-          <li>
-            Upload your Seasons Schoolhouse invoice and proof of payment
-            (receipt) as PNG, JPG, or PDF. Enter the provider name, student,
-            service dates, and amount as prompted.
-          </li>
-          <li>
-            Step Up reviews and, if approved, reimburses eligible families
-            within roughly <strong>2–4 weeks</strong>. Keep your receipt for
-            your records.
-          </li>
-        </ol>
+        <div class="pay-path">
+          <span class="pay-path-tag">Option 1 &middot; Recommended</span>
+          <h3 class="pay-path-title">Direct <em>Pay</em></h3>
+          <p class="pay-path-lede">
+            Your scholarship pays us directly through the EMA portal. Nothing
+            leaves your bank account, and there's no waiting to be paid back.
+          </p>
+          <ol class="process-list">
+            <li>
+              Log in to your Step Up For Students account and open the
+              <strong>EMA portal</strong> (Education Market Assistant).
+            </li>
+            <li>
+              Go to <em>Find Providers</em> and search for
+              <strong>Seasons Schoolhouse LLC</strong>. Select us as a provider
+              for your student.
+            </li>
+            <li>
+              After you complete the Family Form, we'll submit your student's
+              tuition to EMA for direct payment.
+            </li>
+            <li>
+              Approve the payment request in your EMA account. Step Up reviews
+              it and pays Seasons Schoolhouse directly from your scholarship
+              balance.
+            </li>
+            <li>
+              You'll receive a receipt by email from us once payment is
+              processed. Keep it for your records.
+            </li>
+          </ol>
+        </div>
+
+        <div class="pay-path">
+          <span class="pay-path-tag">Option 2</span>
+          <h3 class="pay-path-title"><em>Reimbursement</em></h3>
+          <p class="pay-path-lede">
+            You pay tuition up front and Step Up pays you back. Choose this if
+            you'd rather not set us up as a provider in EMA, or if you've
+            already paid.
+          </p>
+          <ol class="process-list">
+            <li>
+              After you complete the Family Form, you'll receive an invoice by
+              email from <strong>Seasons Schoolhouse LLC</strong>.
+            </li>
+            <li>
+              Pay the invoice. You'll receive a receipt by email once payment
+              is processed.
+            </li>
+            <li>
+              Log in to the <strong>EMA portal</strong>, go to the
+              <em>Reimbursements</em> section, and start a new request.
+            </li>
+            <li>
+              Upload your Seasons Schoolhouse invoice and your receipt as proof
+              of payment (PNG, JPG, or PDF). Enter the provider name, student,
+              service dates, and amount as prompted.
+            </li>
+            <li>
+              Step Up reviews and, if approved, reimburses eligible families
+              within roughly <strong>2&ndash;4 weeks</strong>. Keep your receipt
+              for your records.
+            </li>
+          </ol>
+        </div>
+
+        <p class="btn-note" style="margin-top:1.6rem;">
+          Either way, this applies to <strong>student tuition</strong> only.
+          Step Up does not cover the $100 registration fee, so it is billed
+          separately and paid directly to Seasons Schoolhouse.
+        </p>
 
         <div class="ready-list">
           <div class="ready-list-title">What to have ready</div>
           <ul>
-            <li>Your Seasons Schoolhouse invoice (emailed after your Family Form)</li>
-            <li>Your Seasons Schoolhouse receipt (emailed after payment)</li>
             <li>Your Step Up For Students / EMA account login</li>
             <li>Your student's details as they appear on your scholarship account</li>
+            <li>Your student's Award ID, found in your EMA account</li>
+            <li>Your completed Seasons Schoolhouse Family Form</li>
+            <li><em>For reimbursement:</em> your Seasons Schoolhouse invoice and receipt</li>
           </ul>
         </div>
 
         <p class="btn-note" style="margin-top: 2rem;">
           Policy and timelines can change. For the most current Step Up
-          reimbursement policy and portal access, please visit
+          payment policy and portal access, please visit
           <a href="https://www.stepupforstudents.org/"
              target="_blank" rel="noopener noreferrer">stepupforstudents.org</a>,
           or email
