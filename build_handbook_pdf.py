@@ -49,11 +49,7 @@ SAGE  = Color(0.478431, 0.607843, 0.470588)  # #7A9B78
 FONT_DIR = "fonts"
 COVER_YEAR = "2 0 2 6 &nbsp;&nbsp; · &nbsp;&nbsp; 2 0 2 7"
 # Pull quotes are a PDF-only design element, keyed by the h3 they precede.
-PULL_QUOTES = {
-    "Student Tuition":
-        "\u201cWhat you see here is what you\u2019ll pay. Together, tuition and the "
-        "registration fee cover the full cost of participation.\u201d",
-}
+PULL_QUOTES = {}
 
 FOOTER_TXT = "Seasons Schoolhouse LLC  ·  Palm Coast, FL  ·  Page {page} of {total}"
 
